@@ -1,0 +1,2117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .page-main {
+        background: black;
+        /* ! tailwindcss (normalize) v3.4.14 | MIT License | https://tailwindcss.com */
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        -webkit-tap-highlight-color: transparent;
+        margin: 0;
+        line-height: inherit;
+        font-size: 14px;
+        --un-text-opacity: 1;
+        color: rgb(255 255 255 / var(--un-text-opacity)) /* #fff */;
+        line-height: 20px;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          sans-serif,
+          Apple Color Emoji,
+          Segoe UI Emoji,
+          Segoe UI Symbol,
+          Noto Color Emoji;
+      }
+      @media (min-width: 768px) {
+        .page-main {
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+      .page-main *,
+      .page-main ::before,
+      .page-main ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+      .page-main ::before,
+      .page-main ::after {
+        --tw-content: "";
+      }
+      .page-main hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px;
+      }
+      .page-main abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+      .page-main h1,
+      .page-main h2,
+      .page-main h3,
+      .page-main h4,
+      .page-main h5,
+      .page-main h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      .page-main a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      .page-main b,
+      .page-main strong {
+        font-weight: bolder;
+      }
+      .page-main code,
+      .page-main kbd,
+      .page-main samp,
+      .page-main pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        font-size: 1em;
+      }
+      .page-main small {
+        font-size: 80%;
+      }
+      .page-main sub,
+      .page-main sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      .page-main sub {
+        bottom: -0.25em;
+      }
+      .page-main sup {
+        top: -0.5em;
+      }
+      .page-main table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse;
+      }
+      .page-main button,
+      .page-main input,
+      .page-main optgroup,
+      .page-main select,
+      .page-main textarea {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+      }
+      .page-main button,
+      .page-main select {
+        text-transform: none;
+      }
+      .page-main :-moz-focusring {
+        outline: auto;
+      }
+      .page-main :-moz-ui-invalid {
+        box-shadow: none;
+      }
+      .page-main progress {
+        vertical-align: baseline;
+      }
+      .page-main ::-webkit-inner-spin-button,
+      .page-main ::-webkit-outer-spin-button {
+        height: auto;
+      }
+      .page-main [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      .page-main ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      .page-main ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      .page-main summary {
+        display: list-item;
+      }
+      .page-main blockquote,
+      .page-main dl,
+      .page-main dd,
+      .page-main h1,
+      .page-main h2,
+      .page-main h3,
+      .page-main h4,
+      .page-main h5,
+      .page-main h6,
+      .page-main hr,
+      .page-main figure,
+      .page-main p,
+      .page-main pre {
+        margin: 0;
+      }
+      .page-main fieldset {
+        margin: 0;
+        padding: 0;
+      }
+      .page-main legend {
+        padding: 0;
+      }
+      .page-main ol,
+      .page-main ul,
+      .page-main menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .page-main dialog {
+        padding: 0;
+      }
+      .page-main textarea {
+        resize: vertical;
+      }
+      .page-main input::-moz-placeholder,
+      .page-main textarea::-moz-placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      .page-main input::placeholder,
+      .page-main textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      .page-main button,
+      .page-main [role="button"] {
+        cursor: pointer;
+      }
+      .page-main :disabled {
+        cursor: default;
+      }
+      .page-main img,
+      .page-main svg,
+      .page-main video,
+      .page-main canvas,
+      .page-main audio,
+      .page-main iframe,
+      .page-main embed,
+      .page-main object {
+        display: block;
+        vertical-align: middle;
+      }
+      .page-main img,
+      .page-main video {
+        max-width: 100%;
+        height: auto;
+      }
+      .page-main [hidden]:where(:not([hidden="until-found"])) {
+        display: none;
+      }
+      .page-main .blaze-slider {
+        --slides-to-show: 1;
+        --slide-gap: 20px;
+        direction: ltr;
+      }
+      .page-main .blaze-container {
+        position: relative;
+      }
+      .page-main .blaze-track-container {
+        overflow: hidden;
+      }
+      .page-main .blaze-track {
+        will-change: transform;
+        touch-action: pan-y;
+        display: flex;
+        gap: var(--slide-gap);
+        --slide-width: calc(
+          (100% - (var(--slides-to-show) - 1) * var(--slide-gap)) /
+            var(--slides-to-show)
+        );
+        box-sizing: border-box;
+      }
+      .page-main .blaze-track > * {
+        box-sizing: border-box;
+        width: var(--slide-width);
+        flex-shrink: 0;
+      }
+      .page-main .section-hero {
+        min-height: 220px;
+        display: flex;
+        border-radius: 8px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        background: image-set(
+            url("./images/hero-bg-mobile.jpg") type("image/jpg") 1x,
+            url("./images/hero-bg-mobile@2x.jpg") type("image/jpg") 2x
+          )
+          right center no-repeat;
+        background-size: cover;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero {
+          min-height: 250px;
+          align-items: center;
+          padding: 40px;
+        }
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero {
+          background: image-set(
+              url("./images/hero-bg-desktop.jpg") type("image/jpg") 1x,
+              url("./images/hero-bg-desktop@2x.jpg") type("image/jpg") 2x
+            )
+            right center no-repeat;
+          background-size: cover;
+        }
+      }
+      .page-main .section-hero .wrapper {
+        max-width: 215px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero .wrapper {
+          margin-top: 8px;
+          max-width: 651px;
+        }
+      }
+      .page-main .section-hero .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 21px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero .title {
+          font-size: 24px;
+          line-height: 35px;
+        }
+      }
+      .page-main .section-hero .text {
+        margin-top: 6px;
+        padding-bottom: 20px;
+        font-size: 12px;
+        line-height: 18px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero .text {
+          margin-top: 8px;
+          padding-bottom: 0;
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+      .page-main .section-hero .base-button {
+        margin-top: auto;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-hero .base-button {
+          margin-top: 20px;
+        }
+      }
+      .page-main .section-mobile-app {
+        padding-top: 24px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app {
+          padding-top: 40px;
+        }
+      }
+      .page-main .section-mobile-app .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .title {
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+      .page-main .section-mobile-app .benefits {
+        margin-top: 8px;
+        display: flex;
+        gap: 12px;
+        overflow: auto;
+        scrollbar-width: none;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefits {
+          margin-top: 16px;
+          gap: 24px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .page-main .section-mobile-app .benefits {
+          overflow: visible;
+        }
+      }
+      .page-main .section-mobile-app .benefit-card {
+        max-width: 270px;
+        width: 100%;
+        min-height: 285px;
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        --un-bg-opacity: 1;
+        background-color: rgb(19 26 45 / var(--un-bg-opacity)) /* #131a2d */;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 14px;
+        padding-right: 14px;
+        text-align: center;
+        box-shadow: inset 0 4px 4px 0 #303e64;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefit-card {
+          max-width: 434px;
+          min-height: 333px;
+          gap: 20px;
+          padding-top: 25px;
+          padding-bottom: 25px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .page-main .section-mobile-app .benefit-card {
+          flex-shrink: 1;
+        }
+      }
+      .page-main .section-mobile-app .benefit-card .image {
+        width: 120px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefit-card .image {
+          width: 150px;
+        }
+      }
+      .page-main .section-mobile-app .benefit-card .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        background: linear-gradient(180deg, #00b6ef 0%, #75acff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefit-card .title {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+      .page-main .section-mobile-app .benefit-card .description {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefit-card .description {
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+      .page-main .section-mobile-app .benefit-card .show-desktop {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-mobile-app .benefit-card .show-desktop {
+          display: inline;
+        }
+      }
+      .page-main .section-instructions {
+        padding-top: 24px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions {
+          padding-top: 40px;
+        }
+      }
+      .page-main .section-instructions .title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .title {
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+      .page-main .section-instructions .text {
+        margin-top: 8px;
+        --un-text-opacity: 1;
+        color: rgb(129 148 200 / var(--un-text-opacity)) /* #8194c8 */;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .text {
+          margin-top: 0;
+        }
+      }
+      .page-main .section-instructions .install-block {
+        margin-top: 8px;
+        min-height: 916px;
+        border-radius: 12px;
+        padding-bottom: 53px;
+        backdrop-filter: blur(4px);
+        background: linear-gradient(
+          180deg,
+          rgba(142, 84, 233, 0.2) 0%,
+          rgba(39, 118, 230, 0.2) 100%
+        );
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .install-block {
+          margin-top: 16px;
+          min-height: 830px;
+          border-radius: 16px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+      .page-main .section-instructions .tabs {
+        width: 100%;
+        min-height: 64px;
+        display: flex;
+        overflow: auto;
+        padding-left: 24px;
+        padding-right: 24px;
+        scrollbar-width: none;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .tabs {
+          min-height: 88px;
+          overflow: visible;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .page-main .section-instructions .tab {
+        display: grid;
+        min-width: 100px;
+        flex-shrink: 0;
+        place-items: center;
+        border-bottom-width: 1px;
+        --un-border-opacity: 1;
+        --un-border-bottom-opacity: var(--un-border-opacity);
+        border-bottom-color: rgb(129 148 200 / var(--un-border-bottom-opacity));
+        background-color: transparent /* transparent */;
+        padding-left: 14px;
+        padding-right: 14px;
+        font-size: 16px;
+        --un-text-opacity: 1;
+        color: rgb(129 148 200 / var(--un-text-opacity)) /* #8194c8 */;
+        line-height: 20px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .tab {
+          min-width: none;
+          flex-shrink: 1;
+          flex-grow: 1;
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+      .page-main .section-instructions .tab.active {
+        position: relative;
+        font-weight: 700;
+        background: linear-gradient(180deg, #00b6ef 0%, #75acff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .page-main .section-instructions .tab.active::before {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom-width: 1px;
+        --un-border-opacity: 1;
+        --un-border-bottom-opacity: var(--un-border-opacity);
+        border-bottom-color: rgb(114 172 254 / var(--un-border-bottom-opacity));
+        content: "";
+      }
+      .page-main .section-instructions .tab-contents {
+        position: relative;
+        margin-top: 15px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .tab-contents {
+          margin-top: 32px;
+        }
+      }
+      .page-main .section-instructions .tab-content {
+        cursor: grab;
+        display: none;
+      }
+      .page-main .section-instructions .tab-content:active {
+        cursor: grabbing;
+      }
+      .page-main .section-instructions .nav-buttons {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        gap: 24px;
+      }
+      .page-main .section-instructions .blaze-prev,
+      .page-main .section-instructions .blaze-next {
+        overflow: hidden;
+        border-radius: 9999px;
+        background-color: transparent /* transparent */;
+      }
+      .page-main .section-instructions .blaze-prev.disabled,
+      .page-main .section-instructions .blaze-next.disabled {
+        opacity: 0.4;
+      }
+      .page-main .section-instructions .slide {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .page-main .section-instructions .slide-text {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .slide-text {
+          align-items: center;
+          gap: 14px;
+          padding-right: 130px;
+        }
+      }
+      .page-main .section-instructions .number {
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .number {
+          display: grid;
+          width: 36px;
+          height: 36px;
+          place-items: center;
+          border-radius: 9999px;
+          --un-bg-opacity: 1;
+          background-color: rgb(255 255 255 / var(--un-bg-opacity)) /* #fff */;
+          font-size: 24px;
+          --un-text-opacity: 1;
+          color: rgb(27 0 12 / var(--un-text-opacity)) /* #1b000c */;
+          font-weight: 700;
+          line-height: 35px;
+        }
+      }
+      .page-main .section-instructions .slide-image {
+        margin-top: 24px;
+        width: 100%;
+        max-width: 1000px;
+        align-self: center;
+      }
+      .page-main
+        .section-instructions
+        .tab-content.desktop:nth-of-type(2)
+        .slide:nth-of-type(3)
+        .slide-image {
+        max-width: 500px;
+      }
+      .page-main
+        .section-instructions
+        .tab-content.desktop:nth-of-type(3)
+        .slide:nth-of-type(4)
+        .slide-image {
+        max-width: 700px;
+      }
+      .page-main .section-instructions .tab-content.desktop {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .tab-content.desktop {
+          display: flex;
+        }
+      }
+      .page-main .section-instructions .tab-content.mobile {
+        display: flex;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .tab-content.mobile {
+          display: none;
+        }
+      }
+      .page-main .base-button {
+        display: inline-grid;
+        min-height: 30px;
+        place-items: center;
+        border-radius: 8px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        background: linear-gradient(180deg, #2bbeff 0%, #0184ff 100%);
+      }
+      @media (min-width: 768px) {
+        .page-main .base-button {
+          min-height: 40px;
+          padding-left: 24px;
+          padding-right: 24px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .page-main .base-button:hover,
+      .page-main .base-button:active {
+        background: linear-gradient(180deg, #0092bf 0%, #5e8acc 100%);
+      }
+      .page-main .base-button:disabled {
+        opacity: 0.5;
+      }
+      .page-main .page-main__container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1350px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      @media (min-width: 768px) {
+        .page-main .page-main__container {
+          padding-top: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-main">
+      <div class="page-main__container">
+        <section class="section-hero">
+          <div class="wrapper">
+            <h1 class="title">Lorem ipsum dolor sit amet consectetur.</h1>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur. Nunc nunc tempus non
+              iaculis ligula eget sit duis nunc.
+            </p>
+            <a class="base-button" href="#">Играть Сейчас</a>
+          </div>
+        </section>
+
+        <section class="section-mobile-app">
+          <h2 class="title">Мобильное приложение Arkada</h2>
+          <div class="benefits">
+            <div class="benefit-card">
+              <img
+                class="image"
+                src="./images/stopwatch.png"
+                srcset="images/stopwatch@2x.png 2x"
+                alt="#"
+              />
+              <h3 class="title">Мгновенный доступ</h3>
+              <p class="description">
+                Получите доступ к любимым играм в любое время и в любом месте с
+                нашим PWA — без ограничений!
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <img
+                class="image"
+                src="./images/present.png"
+                srcset="images/present@2x.png 2x"
+                alt="#"
+              />
+              <h3 class="title">Уникальные бонусы</h3>
+              <p class="description">
+                Откройте эксклюзивные бонусы
+                <span class="show-desktop">и награды</span> с нашим PWA —
+                улучшенный игровой процесс, только для пользователей приложения!
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <img
+                class="image"
+                src="./images/lock.png"
+                srcset="images/lock@2x.png 2x"
+                alt="#"
+              />
+              <h3 class="title">Безопасность и надежность</h3>
+              <p class="description">
+                Ощутите высочайший уровень безопасности с нашим PWA —
+                безопасным, зашифрованным и надежным.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-instructions">
+          <h2 class="title">Установить приложение Казино</h2>
+          <p class="text">
+            Ваши любимые игры у вас под рукой. Быстрые выплаты. Доступ за
+            секунду к большим бонусам и захватывающим турнирам. Все, что вы
+            любите, только лучше.
+          </p>
+          <div class="install-block">
+            <div class="slider_desktop">
+              <div class="tabs">
+                <button class="tab" data-target="tab1">Safari</button>
+                <button class="tab" data-target="tab2">Google Chrome</button>
+                <button class="tab" data-target="tab3">Yandex Browser</button>
+              </div>
+
+              <div class="tab-contents">
+                <div class="tab-content desktop" id="tab1-desktop">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="nav-buttons">
+                          <button class="blaze-prev">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127404)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  transform="matrix(-1 0 0 1 40 0)"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M22.6271 12.3095C22.0413 11.7237 21.0915 11.7237 20.5057 12.3095L13.8753 18.9399C13.2895 19.5257 13.2895 20.4754 13.8753 21.0612L20.5057 27.6916C21.0915 28.2774 22.0413 28.2774 22.6271 27.6916C23.2129 27.1058 23.2129 26.1561 22.6271 25.5703L17.0573 20.0005L22.6271 14.4308C23.2129 13.845 23.2129 12.8952 22.6271 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127404">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    transform="matrix(-1 0 0 1 40 0)"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                          <button class="blaze-next">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127405)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M17.3729 12.3095C17.9587 11.7237 18.9085 11.7237 19.4943 12.3095L26.1247 18.9399C26.7105 19.5257 26.7105 20.4754 26.1247 21.0612L19.4943 27.6916C18.9085 28.2774 17.9587 28.2774 17.3729 27.6916C16.7871 27.1058 16.7871 26.1561 17.3729 25.5703L22.9427 20.0005L17.3729 14.4308C16.7871 13.845 16.7871 12.8952 17.3729 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127405">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1</div>
+                              <p>
+                                Зайдите в браузер, откройте наше казино Arkada и
+                                нажмите кнопку «Файл» в меню. В открывшемся меню
+                                выберите «Добавить в док».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-1-desktop.jpg"
+                              srcset="images/safari-step-1-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2</div>
+                              <p>
+                                Настройте имя приложения, а затем нажмите кнопку
+                                «Добавить».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-2-desktop.jpg"
+                              srcset="images/safari-step-2-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content desktop" id="tab2-desktop">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="nav-buttons">
+                          <button class="blaze-prev">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127404)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  transform="matrix(-1 0 0 1 40 0)"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M22.6271 12.3095C22.0413 11.7237 21.0915 11.7237 20.5057 12.3095L13.8753 18.9399C13.2895 19.5257 13.2895 20.4754 13.8753 21.0612L20.5057 27.6916C21.0915 28.2774 22.0413 28.2774 22.6271 27.6916C23.2129 27.1058 23.2129 26.1561 22.6271 25.5703L17.0573 20.0005L22.6271 14.4308C23.2129 13.845 23.2129 12.8952 22.6271 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127404">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    transform="matrix(-1 0 0 1 40 0)"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                          <button class="blaze-next">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127405)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M17.3729 12.3095C17.9587 11.7237 18.9085 11.7237 19.4943 12.3095L26.1247 18.9399C26.7105 19.5257 26.7105 20.4754 26.1247 21.0612L19.4943 27.6916C18.9085 28.2774 17.9587 28.2774 17.3729 27.6916C16.7871 27.1058 16.7871 26.1561 17.3729 25.5703L22.9427 20.0005L17.3729 14.4308C16.7871 13.845 16.7871 12.8952 17.3729 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127405">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1</div>
+                              <p>Нажмите на значок в правом верхнем углу.</p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-1-desktop.jpg"
+                              srcset="images/google-chrome-step-1-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2</div>
+                              <p>
+                                В окне подтверждения нажмите кнопку
+                                «Установить», чтобы добавить PWA на главный
+                                экран.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-2-desktop.jpg"
+                              srcset="images/google-chrome-step-2-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">3</div>
+                              <p>
+                                Теперь PWA добавлен на домашний экран в виде
+                                значка приложения.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-3-desktop.png"
+                              srcset="images/google-chrome-step-3-desktop@2x.png"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content desktop" id="tab3-desktop">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="nav-buttons">
+                          <button class="blaze-prev">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127404)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  transform="matrix(-1 0 0 1 40 0)"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M22.6271 12.3095C22.0413 11.7237 21.0915 11.7237 20.5057 12.3095L13.8753 18.9399C13.2895 19.5257 13.2895 20.4754 13.8753 21.0612L20.5057 27.6916C21.0915 28.2774 22.0413 28.2774 22.6271 27.6916C23.2129 27.1058 23.2129 26.1561 22.6271 25.5703L17.0573 20.0005L22.6271 14.4308C23.2129 13.845 23.2129 12.8952 22.6271 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127404">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    transform="matrix(-1 0 0 1 40 0)"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                          <button class="blaze-next">
+                            <svg
+                              width="40"
+                              height="40"
+                              viewBox="0 0 40 40"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_9632_127405)">
+                                <rect
+                                  opacity="0.6"
+                                  width="40"
+                                  height="40"
+                                  fill="#232E4A"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M17.3729 12.3095C17.9587 11.7237 18.9085 11.7237 19.4943 12.3095L26.1247 18.9399C26.7105 19.5257 26.7105 20.4754 26.1247 21.0612L19.4943 27.6916C18.9085 28.2774 17.9587 28.2774 17.3729 27.6916C16.7871 27.1058 16.7871 26.1561 17.3729 25.5703L22.9427 20.0005L17.3729 14.4308C16.7871 13.845 16.7871 12.8952 17.3729 12.3095Z"
+                                  fill="#8194C8"
+                                />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_9632_127405">
+                                  <rect
+                                    width="40"
+                                    height="40"
+                                    rx="20"
+                                    fill="white"
+                                  />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1</div>
+                              <p>Нажмите на 3 точки в правом верхнем углу.</p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-1-desktop.jpg"
+                              srcset="images/yandex-browser-step-1-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2</div>
+                              <p>
+                                В появившемся меню нажмите кнопку «Установить
+                                приложение».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-2-desktop.jpg"
+                              srcset="images/yandex-browser-step-2-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">3</div>
+                              <p>
+                                Выберите, в каком направлении вы хотите
+                                установить приложение: в отдельном окне или в
+                                текущем окне браузера.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-3-desktop.jpg"
+                              srcset="images/yandex-browser-step-3-desktop@2x.jpg"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">4</div>
+                              <p>
+                                После установки приложение появится в левом
+                                нижнем углу веб-браузера.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-4-desktop.png"
+                              srcset="images/yandex-browser-step-4-desktop@2x.png"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content mobile" id="tab1-mobile">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1.</div>
+                              <p>
+                                Зайдите в браузер, откройте наше казино Arkada и
+                                нажмите кнопку «Файл» в меню.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-1-mobile.png"
+                              srcset="images/safari-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2.</div>
+                              <p>
+                                В открывшемся меню выберите «Добавить на главный
+                                экран». Если параметр «Добавить на главный
+                                экран» не отображается, возможно, он добавлен.
+                                Прокрутите список вниз, нажмите на кнопку
+                                «Изменить действия», затем нажмите на кнопку
+                                «плюс» возле пункта «Добавить на главный экран».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-1-mobile.png"
+                              srcset="images/safari-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">3.</div>
+                              <p>
+                                Настройте имя приложения, а затем нажмите кнопку
+                                «Добавить».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-1-mobile.png"
+                              srcset="images/safari-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">4.</div>
+                              <p>
+                                Обратите внимание, что действия могут немного
+                                отличаться в зависимости от используемой вами
+                                версии iOS.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/safari-step-1-mobile.png"
+                              srcset="images/safari-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content mobile" id="tab2-mobile">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1.</div>
+                              <p>
+                                Откройте браузер и перейдите на сайт PWA.
+                                Нажмите на кнопку с тремя точками в правом
+                                верхнем углу.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-1-mobile.png"
+                              srcset="images/google-chrome-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2.</div>
+                              <p>
+                                В открывшемся меню выберите «Добавить на главный
+                                экран».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-2-mobile.png"
+                              srcset="images/google-chrome-step-2-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">3.</div>
+                              <p>
+                                Появится диалоговое окно подтверждения установки
+                                с названием приложения и его значком. Нажмите
+                                кнопку «Установить», чтобы добавить PWA на
+                                домашний экран.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-3-mobile.png"
+                              srcset="images/google-chrome-step-3-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">4.</div>
+                              <p>
+                                Обратите внимание, что шаги могут немного
+                                отличаться в зависимости от используемого
+                                браузера или версии Android. Теперь PWA добавлен
+                                на домашний экран в виде значка приложения. Вы
+                                можете получить доступ к сайту одним нажатием.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/google-chrome-step-4-mobile.png"
+                              srcset="images/google-chrome-step-4-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content mobile" id="tab3-mobile">
+                  <div class="blaze-slider">
+                    <div class="blaze-container">
+                      <div class="blaze-track-container">
+                        <div class="blaze-track">
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">1.</div>
+                              <p>
+                                Откройте браузер и перейдите на сайт PWA,
+                                который вы хотите добавить. Нажмите на кнопку
+                                меню в правом нижнем углу.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-1-mobile.png"
+                              srcset="images/yandex-browser-step-1-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">2.</div>
+                              <p>
+                                В открывшемся меню выберите «Добавить на главный
+                                экран».
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-2-mobile.png"
+                              srcset="images/yandex-browser-step-2-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">3.</div>
+                              <p>
+                                Появится диалоговое окно подтверждения установки
+                                с названием приложения и его значком. Нажмите
+                                кнопку «Добавить», чтобы добавить PWA на
+                                домашний экран.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-3-mobile.png"
+                              srcset="images/yandex-browser-step-3-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+
+                          <div class="slide">
+                            <div class="slide-text">
+                              <div class="number">4.</div>
+                              <p>
+                                Теперь PWA добавлен на домашний экран в качестве
+                                значка приложения. Вы можете получить доступ к
+                                сайту одним нажатием. Обратите внимание, что
+                                шаги могут немного отличаться в зависимости от
+                                используемого вами браузера или версии Android.
+                              </p>
+                            </div>
+
+                            <img
+                              class="slide-image"
+                              src="./images/yandex-browser-step-4-mobile.png"
+                              srcset="images/yandex-browser-step-4-mobile@2x.png"
+                              alt="#"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      function calculatePages(slider) {
+        const { slidesToShow, slidesToScroll, loop } = slider.config;
+        const { isStatic, totalSlides } = slider;
+        const pages = [];
+        const lastIndex = totalSlides - 1;
+        for (
+          let startIndex = 0;
+          startIndex < totalSlides;
+          startIndex += slidesToScroll
+        ) {
+          const _endIndex = startIndex + slidesToShow - 1;
+          const overflow = _endIndex > lastIndex;
+          if (overflow) {
+            if (!loop) {
+              const startIndex2 = lastIndex - slidesToShow + 1;
+              const lastPageIndex = pages.length - 1;
+              if (
+                pages.length === 0 ||
+                (pages.length > 0 && pages[lastPageIndex][0] !== startIndex2)
+              ) {
+                pages.push([startIndex2, lastIndex]);
+              }
+              break;
+            } else {
+              const endIndex = _endIndex - totalSlides;
+              pages.push([startIndex, endIndex]);
+            }
+          } else {
+            pages.push([startIndex, _endIndex]);
+          }
+          if (isStatic) {
+            break;
+          }
+        }
+        return pages;
+      }
+      function calculateStates(slider) {
+        const { totalSlides } = slider;
+        const { loop } = slider.config;
+        const pages = calculatePages(slider);
+        const states = [];
+        const lastPageIndex = pages.length - 1;
+        for (let pageIndex = 0; pageIndex < pages.length; pageIndex++) {
+          let nextPageIndex, prevPageIndex;
+          if (loop) {
+            nextPageIndex = pageIndex === lastPageIndex ? 0 : pageIndex + 1;
+            prevPageIndex = pageIndex === 0 ? lastPageIndex : pageIndex - 1;
+          } else {
+            nextPageIndex =
+              pageIndex === lastPageIndex ? lastPageIndex : pageIndex + 1;
+            prevPageIndex = pageIndex === 0 ? 0 : pageIndex - 1;
+          }
+          const currentPageStartIndex = pages[pageIndex][0];
+          const nextPageStartIndex = pages[nextPageIndex][0];
+          const prevPageStartIndex = pages[prevPageIndex][0];
+          let nextDiff = nextPageStartIndex - currentPageStartIndex;
+          if (nextPageStartIndex < currentPageStartIndex) {
+            nextDiff += totalSlides;
+          }
+          let prevDiff = currentPageStartIndex - prevPageStartIndex;
+          if (prevPageStartIndex > currentPageStartIndex) {
+            prevDiff += totalSlides;
+          }
+          states.push({
+            page: pages[pageIndex],
+            next: {
+              stateIndex: nextPageIndex,
+              moveSlides: nextDiff,
+            },
+            prev: {
+              stateIndex: prevPageIndex,
+              moveSlides: prevDiff,
+            },
+          });
+        }
+        return states;
+      }
+      const START = "start";
+      const END = "end";
+      function fixSliderConfig(slider) {
+        const { slidesToScroll, slidesToShow } = slider.config;
+        const { totalSlides, config } = slider;
+        if (totalSlides < slidesToShow) {
+          config.slidesToShow = totalSlides;
+        }
+        if (totalSlides <= slidesToShow) {
+          return;
+        }
+        if (slidesToScroll > slidesToShow) {
+          config.slidesToScroll = slidesToShow;
+        }
+        if (totalSlides < slidesToScroll + slidesToShow) {
+          const properSlidesToScroll = totalSlides - slidesToShow;
+          config.slidesToScroll = properSlidesToScroll;
+        }
+      }
+      class Automata {
+        constructor(totalSlides, config) {
+          this.config = config;
+          this.totalSlides = totalSlides;
+          this.isTransitioning = false;
+          constructAutomata(this, totalSlides, config);
+        }
+        next(pages = 1) {
+          if (this.isTransitioning || this.isStatic) return;
+          const { stateIndex } = this;
+          let slidesMoved = 0;
+          let newStateIndex = stateIndex;
+          for (let i = 0; i < pages; i++) {
+            const state = this.states[newStateIndex];
+            slidesMoved += state.next.moveSlides;
+            newStateIndex = state.next.stateIndex;
+          }
+          if (newStateIndex === stateIndex) return;
+          this.stateIndex = newStateIndex;
+          return [stateIndex, slidesMoved];
+        }
+        prev(pages = 1) {
+          if (this.isTransitioning || this.isStatic) return;
+          const { stateIndex } = this;
+          let slidesMoved = 0;
+          let newStateIndex = stateIndex;
+          for (let i = 0; i < pages; i++) {
+            const state = this.states[newStateIndex];
+            slidesMoved += state.prev.moveSlides;
+            newStateIndex = state.prev.stateIndex;
+          }
+          if (newStateIndex === stateIndex) return;
+          this.stateIndex = newStateIndex;
+          return [stateIndex, slidesMoved];
+        }
+      }
+      function constructAutomata(automata, totalSlides, config) {
+        automata.stateIndex = 0;
+        fixSliderConfig(automata);
+        automata.isStatic = totalSlides <= config.slidesToShow;
+        automata.states = calculateStates(automata);
+      }
+      function scrollPrev(slider, slideCount) {
+        const rAf = requestAnimationFrame;
+        if (!slider.config.loop) {
+          noLoopScroll(slider);
+        } else {
+          disableTransition(slider);
+          slider.offset = -1 * slideCount;
+          updateTransform(slider);
+          wrapPrev(slider, slideCount);
+          const reset = () => {
+            rAf(() => {
+              enableTransition(slider);
+              rAf(() => {
+                slider.offset = 0;
+                updateTransform(slider);
+                onSlideEnd(slider);
+              });
+            });
+          };
+          if (slider.isDragging) {
+            if (isTouch()) {
+              slider.track.addEventListener("touchend", reset, { once: true });
+            } else {
+              slider.track.addEventListener("pointerup", reset, { once: true });
+            }
+          } else {
+            rAf(reset);
+          }
+        }
+      }
+      function scrollNext(slider, slideCount) {
+        const rAf = requestAnimationFrame;
+        if (!slider.config.loop) {
+          noLoopScroll(slider);
+        } else {
+          slider.offset = -1 * slideCount;
+          updateTransform(slider);
+          setTimeout(() => {
+            wrapNext(slider, slideCount);
+            disableTransition(slider);
+            slider.offset = 0;
+            updateTransform(slider);
+            rAf(() => {
+              rAf(() => {
+                enableTransition(slider);
+                onSlideEnd(slider);
+              });
+            });
+          }, slider.config.transitionDuration);
+        }
+      }
+      function onSlideEnd(slider) {
+        if (slider.onSlideCbs) {
+          const state = slider.states[slider.stateIndex];
+          const [firstSlideIndex, lastSlideIndex] = state.page;
+          slider.onSlideCbs.forEach((cb) =>
+            cb(slider.stateIndex, firstSlideIndex, lastSlideIndex),
+          );
+        }
+      }
+      function noLoopScroll(slider) {
+        slider.offset = -1 * slider.states[slider.stateIndex].page[0];
+        updateTransform(slider);
+        onSlideEnd(slider);
+      }
+      function wrapPrev(slider, count) {
+        const len = slider.slides.length;
+        for (let i = 0; i < count; i++) {
+          const slide = slider.slides[len - 1];
+          slider.track.prepend(slide);
+        }
+      }
+      function wrapNext(slider, count) {
+        for (let i = 0; i < count; i++) {
+          slider.track.append(slider.slides[0]);
+        }
+      }
+      function updateTransform(slider) {
+        const { track, offset, dragged } = slider;
+        if (offset === 0) {
+          track.style.transform = `translate3d(${dragged}px,0px,0px)`;
+        } else {
+          track.style.transform = `translate3d(  calc( ${dragged}px + ${offset} * (var(--slide-width) + ${slider.config.slideGap})),0px,0px)`;
+        }
+      }
+      function enableTransition(slider) {
+        slider.track.style.transitionDuration = `${slider.config.transitionDuration}ms`;
+      }
+      function disableTransition(slider) {
+        slider.track.style.transitionDuration = `0ms`;
+      }
+      const slideThreshold = 10;
+      const isTouch = () => "ontouchstart" in window;
+      function handlePointerDown(downEvent) {
+        const track = this;
+        const slider = track.slider;
+        if (slider.isTransitioning) return;
+        slider.dragged = 0;
+        track.isScrolled = false;
+        track.startMouseClientX =
+          "touches" in downEvent
+            ? downEvent.touches[0].clientX
+            : downEvent.clientX;
+        if (!("touches" in downEvent)) {
+          const el = downEvent.target || track;
+          el.setPointerCapture(downEvent.pointerId);
+        }
+        disableTransition(slider);
+        updateEventListener(track, "addEventListener");
+      }
+      function handlePointerMove(moveEvent) {
+        const track = this;
+        const x =
+          "touches" in moveEvent
+            ? moveEvent.touches[0].clientX
+            : moveEvent.clientX;
+        const dragged = (track.slider.dragged = x - track.startMouseClientX);
+        const draggedAbs = Math.abs(dragged);
+        if (draggedAbs > 5) {
+          track.slider.isDragging = true;
+        }
+        if (draggedAbs > 15) {
+          moveEvent.preventDefault();
+        }
+        track.slider.dragged = dragged;
+        updateTransform(track.slider);
+        if (!track.isScrolled && track.slider.config.loop) {
+          if (dragged > slideThreshold) {
+            track.isScrolled = true;
+            track.slider.prev();
+          }
+        }
+      }
+      function handlePointerUp() {
+        const track = this;
+        const dragged = track.slider.dragged;
+        track.slider.isDragging = false;
+        updateEventListener(track, "removeEventListener");
+        track.slider.dragged = 0;
+        updateTransform(track.slider);
+        enableTransition(track.slider);
+        if (!track.isScrolled) {
+          if (dragged < -1 * slideThreshold) {
+            track.slider.next();
+          } else if (dragged > slideThreshold) {
+            track.slider.prev();
+          }
+        }
+      }
+      const preventDefault = (event) => event.preventDefault();
+      function dragSupport(slider) {
+        const track = slider.track;
+        track.slider = slider;
+        const event = isTouch() ? "touchstart" : "pointerdown";
+        track.addEventListener(event, handlePointerDown);
+        track.addEventListener(
+          "click",
+          (event2) => {
+            if (slider.isTransitioning || slider.isDragging) {
+              event2.preventDefault();
+              event2.stopImmediatePropagation();
+              event2.stopPropagation();
+            }
+          },
+          {
+            capture: true,
+          },
+        );
+        track.addEventListener("dragstart", preventDefault);
+      }
+      function updateEventListener(track, method) {
+        track[method]("contextmenu", handlePointerUp);
+        if (isTouch()) {
+          track[method]("touchend", handlePointerUp);
+          track[method]("touchmove", handlePointerMove);
+        } else {
+          track[method]("pointerup", handlePointerUp);
+          track[method]("pointermove", handlePointerMove);
+        }
+      }
+      function handleAutoplay(slider) {
+        const config = slider.config;
+        if (!config.enableAutoplay) return;
+        const dir = config.autoplayDirection === "to left" ? "next" : "prev";
+        slider.autoplayTimer = setInterval(() => {
+          slider[dir]();
+        }, config.autoplayInterval);
+        if (config.stopAutoplayOnInteraction) {
+          slider.el.addEventListener(
+            isTouch() ? "touchstart" : "mousedown",
+            () => {
+              clearInterval(slider.autoplayTimer);
+            },
+            { once: true },
+          );
+        }
+      }
+      const defaultConfig = {
+        // layout
+        slideGap: "20px",
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        // behavior
+        loop: true,
+        // autoplay
+        enableAutoplay: false,
+        stopAutoplayOnInteraction: true,
+        autoplayInterval: 3e3,
+        autoplayDirection: "to left",
+        // pagination
+        enablePagination: true,
+        // transition
+        transitionDuration: 300,
+        transitionTimingFunction: "ease",
+        draggable: true,
+      };
+      function createConfig(blazeConfig) {
+        const config = { ...defaultConfig };
+        for (const media in blazeConfig) {
+          if (window.matchMedia(media).matches) {
+            const mediaConfig = blazeConfig[media];
+            for (const key in mediaConfig) {
+              config[key] = mediaConfig[key];
+            }
+          }
+        }
+        return config;
+      }
+      function handleNavigation(slider) {
+        const prev = slider.el.querySelector(".blaze-prev");
+        const next = slider.el.querySelector(".blaze-next");
+        if (prev) {
+          prev.onclick = () => {
+            slider.prev();
+          };
+        }
+        if (next) {
+          next.onclick = () => {
+            slider.next();
+          };
+        }
+      }
+      function handlePagination(slider) {
+        if (!slider.config.enablePagination || slider.isStatic) return;
+        const paginationContainer =
+          slider.el.querySelector(".blaze-pagination");
+        if (!paginationContainer) return;
+        slider.paginationButtons = [];
+        const total = slider.states.length;
+        for (let index = 0; index < total; index++) {
+          const button = document.createElement("button");
+          slider.paginationButtons.push(button);
+          button.textContent = 1 + index + "";
+          button.ariaLabel = `${index + 1} of ${total}`;
+          paginationContainer.append(button);
+          button.slider = slider;
+          button.index = index;
+          button.onclick = handlePaginationButtonClick;
+        }
+        slider.paginationButtons[0].classList.add("active");
+      }
+      function handlePaginationButtonClick() {
+        const index = this.index;
+        const slider = this.slider;
+        const stateIndex = slider.stateIndex;
+        const loop = slider.config.loop;
+        const diff = Math.abs(index - stateIndex);
+        const inverseDiff = slider.states.length - diff;
+        const isDiffLargerThanHalf = diff > slider.states.length / 2;
+        const scrollOpposite = isDiffLargerThanHalf && loop;
+        if (index > stateIndex) {
+          if (scrollOpposite) {
+            slider.prev(inverseDiff);
+          } else {
+            slider.next(diff);
+          }
+        } else {
+          if (scrollOpposite) {
+            slider.next(inverseDiff);
+          } else {
+            slider.prev(diff);
+          }
+        }
+      }
+      function isTransitioning(
+        slider,
+        time = slider.config.transitionDuration,
+      ) {
+        slider.isTransitioning = true;
+        setTimeout(() => {
+          slider.isTransitioning = false;
+        }, time);
+      }
+      class BlazeSlider extends Automata {
+        constructor(blazeSliderEl, blazeConfig) {
+          const track = blazeSliderEl.querySelector(".blaze-track");
+          const slides = track.children;
+          const config = blazeConfig
+            ? createConfig(blazeConfig)
+            : { ...defaultConfig };
+          super(slides.length, config);
+          this.config = config;
+          this.el = blazeSliderEl;
+          this.track = track;
+          this.slides = slides;
+          this.offset = 0;
+          this.dragged = 0;
+          this.isDragging = false;
+          this.el.blazeSlider = this;
+          this.passedConfig = blazeConfig;
+          const slider = this;
+          track.slider = slider;
+          construct(config, slider);
+          let ignoreResize = false;
+          let width = 0;
+          window.addEventListener("resize", () => {
+            if (width === 0) {
+              width = window.innerWidth;
+              return;
+            }
+            const newWidth = window.innerWidth;
+            if (width === newWidth) return;
+            width = newWidth;
+            if (!ignoreResize) {
+              ignoreResize = true;
+              setTimeout(() => {
+                slider.refresh();
+                ignoreResize = false;
+              }, 200);
+            }
+          });
+        }
+        next(count) {
+          if (this.isTransitioning) return;
+          const transition = super.next(count);
+          if (!transition) {
+            isTransitioning(this);
+            return;
+          }
+          const [prevStateIndex, slideCount] = transition;
+          handleStateChange(this, prevStateIndex);
+          isTransitioning(this);
+          scrollNext(this, slideCount);
+        }
+        prev(count) {
+          if (this.isTransitioning) return;
+          const transition = super.prev(count);
+          if (!transition) {
+            isTransitioning(this);
+            return;
+          }
+          const [prevStateIndex, slideCount] = transition;
+          handleStateChange(this, prevStateIndex);
+          isTransitioning(this);
+          scrollPrev(this, slideCount);
+        }
+        stopAutoplay() {
+          clearInterval(this.autoplayTimer);
+        }
+        destroy() {
+          var _a;
+          this.track.removeEventListener(
+            isTouch() ? "touchstart" : "pointerdown",
+            // @ts-expect-error
+            handlePointerDown,
+          );
+          this.stopAutoplay();
+          (_a = this.paginationButtons) == null
+            ? void 0
+            : _a.forEach((button) => button.remove());
+          this.el.classList.remove("static");
+          this.el.classList.remove(START);
+        }
+        refresh() {
+          const newConfig = this.passedConfig
+            ? createConfig(this.passedConfig)
+            : { ...defaultConfig };
+          this.destroy();
+          construct(newConfig, this);
+        }
+        /**
+         * Subscribe for slide change event
+         * Returns a function to unsubscribe from slide change event
+         */
+        onSlide(cb) {
+          if (!this.onSlideCbs) this.onSlideCbs = /* @__PURE__ */ new Set();
+          this.onSlideCbs.add(cb);
+          return () => this.onSlideCbs.delete(cb);
+        }
+      }
+      function handleStateChange(slider, prevStateIndex) {
+        const classList = slider.el.classList;
+        const stateIndex = slider.stateIndex;
+        const buttons = slider.paginationButtons;
+        if (!slider.config.loop) {
+          if (stateIndex === 0) {
+            classList.add(START);
+          } else {
+            classList.remove(START);
+          }
+          if (stateIndex === slider.states.length - 1) {
+            classList.add(END);
+          } else {
+            classList.remove(END);
+          }
+        }
+        if (buttons && slider.config.enablePagination) {
+          buttons[prevStateIndex].classList.remove("active");
+          buttons[stateIndex].classList.add("active");
+        }
+      }
+      function construct(config, slider) {
+        const track = slider.track;
+        slider.slides = track.children;
+        slider.offset = 0;
+        slider.config = config;
+        constructAutomata(slider, slider.totalSlides, config);
+        if (!config.loop) {
+          slider.el.classList.add(START);
+        }
+        if (config.enableAutoplay && !config.loop) {
+          config.enableAutoplay = false;
+        }
+        track.style.transitionProperty = "transform";
+        track.style.transitionTimingFunction =
+          slider.config.transitionTimingFunction;
+        track.style.transitionDuration = `${slider.config.transitionDuration}ms`;
+        const { slidesToShow, slideGap } = slider.config;
+        slider.el.style.setProperty("--slides-to-show", slidesToShow + "");
+        slider.el.style.setProperty("--slide-gap", slideGap);
+        if (!slider.isStatic) {
+          if (config.draggable) {
+            dragSupport(slider);
+          }
+        } else {
+          slider.el.classList.add("static");
+        }
+        handlePagination(slider);
+        handleAutoplay(slider);
+        handleNavigation(slider);
+        updateTransform(slider);
+      }
+      const sliders = document.querySelectorAll(".blaze-slider");
+      sliders.forEach((el) => {
+        const sliderInstance = new BlazeSlider(el, {
+          all: {
+            loop: false,
+            transitionDuration: 100,
+            adaptiveHeight: true,
+          },
+        });
+        const prevButton = el.querySelector(".blaze-prev");
+        const nextButton = el.querySelector(".blaze-next");
+        if (prevButton) {
+          prevButton.classList.add("disabled");
+        }
+        if (nextButton) {
+          sliderInstance.onSlide(
+            (pageIndex, firstVisibleSlideIndex, lastVisibleSlideIndex) => {
+              if (firstVisibleSlideIndex === 0) {
+                prevButton.classList.add("disabled");
+              } else {
+                prevButton.classList.remove("disabled");
+              }
+              if (lastVisibleSlideIndex === sliderInstance.slides.length - 1) {
+                nextButton.classList.add("disabled");
+              } else {
+                nextButton.classList.remove("disabled");
+              }
+            },
+          );
+        }
+      });
+      (function () {
+        const tabs = document.querySelectorAll(".tabs button");
+        const desktopContents = document.querySelectorAll(
+          ".tab-content.desktop",
+        );
+        const mobileContents = document.querySelectorAll(".tab-content.mobile");
+        const hideAllTabs = () => {
+          [...desktopContents, ...mobileContents].forEach(
+            (content) => (content.style.display = "none"),
+          );
+          tabs.forEach((tab) => tab.classList.remove("active"));
+        };
+        const showTab = (targetId) => {
+          hideAllTabs();
+          const isMobile = window.matchMedia("(max-width: 767px)").matches;
+          const targetContent = isMobile
+            ? document.getElementById(`${targetId}-mobile`)
+            : document.getElementById(`${targetId}-desktop`);
+          if (targetContent) {
+            targetContent.style.display = "block";
+          }
+          const activeTab = [...tabs].find(
+            (tab) => tab.dataset.target === targetId,
+          );
+          if (activeTab) {
+            activeTab.classList.add("active");
+            if (isMobile) {
+              activeTab.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center",
+              });
+            }
+          }
+        };
+        if (tabs.length > 0) {
+          const firstTabId = tabs[0].dataset.target;
+          showTab(firstTabId);
+        }
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => showTab(tab.dataset.target));
+        });
+        window.addEventListener("resize", () => {
+          const activeTab = document.querySelector(".tabs button.active");
+          if (activeTab) {
+            showTab(activeTab.dataset.target);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
