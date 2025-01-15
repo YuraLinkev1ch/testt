@@ -840,162 +840,226 @@
     </main>
 
     <script>
-      (function () {
-        class slider {
-          constructor(wrapper) {
-            this.wrapper = wrapper;
-            this.elements = {
-              wrapper: this.wrapper,
-              track: this.wrapper.querySelector(".slider-wrapper"),
-              items: this.wrapper.querySelectorAll(".slider-slide"),
-            };
-            this.buttons = {
-              prev: this.wrapper.querySelector(".slider__prev"),
-              next: this.wrapper.querySelector(".slider__next"),
-            };
-            if (
-              !this.elements.track ||
-              !this.elements.items ||
-              !this.buttons.prev ||
-              !this.buttons.next
-            )
-              return;
-            this.position = 0;
-            this.index = 0;
-            this.width = this.elements.wrapper.clientWidth;
-            this.movePosition = this.width;
-            this.maxPosition = -(
-              this.elements.items.length * this.width -
-              this.width
-            );
-            this.isDragging = false;
-            this.startX = 0;
-            this.currentTranslate = 0;
-            this.prevTranslate = 0;
-            this.dragStartTime = 0;
-            this.hasMovedEnough = false;
-            this.dragDirection = null;
-            this.buttons.prev.addEventListener("click", () => this.prevSlide());
-            this.buttons.next.addEventListener("click", () => this.nextSlide());
-            this.elements.track.addEventListener(
-              "touchstart",
-              (e) => this.startDrag(e),
-              {
-                passive: false,
-              },
-            );
-            this.elements.track.addEventListener(
-              "touchmove",
-              (e) => this.drag(e),
-              { passive: false },
-            );
-            this.elements.track.addEventListener("touchend", () =>
-              this.endDrag(),
-            );
-            this.elements.track.addEventListener("mousedown", (e) =>
-              this.startDrag(e),
-            );
-            document.addEventListener("mousemove", (e) => this.drag(e));
-            document.addEventListener("mouseup", () => this.endDrag());
-            document.addEventListener("mouseleave", () => this.endDrag());
-            this.elements.track.addEventListener("dragstart", (e) =>
-              e.preventDefault(),
-            );
-            this.elements.track.style.transition = "transform 0.3s ease-in-out";
-            this.checkBtns();
-          }
-          nextSlide() {
-            if (this.position <= this.maxPosition) return;
-            this.position -= this.movePosition;
-            this.index++;
-            if (this.position < this.maxPosition) {
-              this.position = this.maxPosition;
-            }
-            this.setPosition();
-            this.checkBtns();
-          }
-          prevSlide() {
-            if (this.position >= 0) return;
-            this.position += this.movePosition;
-            this.index--;
-            if (this.position > 0) {
+      (() => {
+        document.addEventListener("DOMContentLoaded", function () {
+          class Slider {
+            constructor(wrapper) {
+              this.wrapper = wrapper;
+              this.elements = {
+                wrapper: this.wrapper,
+                track: this.wrapper.querySelector(".slider-wrapper"),
+                items: this.wrapper.querySelectorAll(".slider-slide"),
+              };
+              this.buttons = {
+                prev: this.wrapper.querySelector(".slider__prev"),
+                next: this.wrapper.querySelector(".slider__next"),
+              };
+              if (
+                !this.elements.track ||
+                !this.elements.items ||
+                !this.buttons.prev ||
+                !this.buttons.next
+              )
+                return;
               this.position = 0;
-            }
-            this.setPosition();
-            this.checkBtns();
-          }
-          setPosition() {
-            this.elements.track.style.transform = `translateX(${this.position}px)`;
-            this.currentTranslate = this.position;
-            this.prevTranslate = this.position;
-          }
-          checkBtns() {
-            this.buttons.prev.disabled = this.position === 0;
-            this.buttons.next.disabled = this.position <= this.maxPosition;
-          }
-          getPositionX(event) {
-            return event.type.includes("mouse")
-              ? event.pageX
-              : event.touches[0].clientX;
-          }
-          startDrag(e) {
-            this.isDragging = true;
-            this.startX = this.getPositionX(e);
-            this.dragStartTime = Date.now();
-            this.hasMovedEnough = false;
-            this.dragDirection = null;
-            this.elements.track.style.transition = "none";
-            this.elements.track.style.cursor = "grabbing";
-          }
-          drag(e) {
-            if (!this.isDragging) return;
-            e.preventDefault();
-            const currentPosition = this.getPositionX(e);
-            const diff = currentPosition - this.startX;
-            this.dragDirection = diff > 0 ? "right" : "left";
-            if (Math.abs(diff) > 20) {
-              this.hasMovedEnough = true;
-            }
-            const dampingFactor = 0.5;
-            const isFirstSlide = this.position === 0;
-            const isLastSlide = this.position <= this.maxPosition;
-            if ((isFirstSlide && diff > 0) || (isLastSlide && diff < 0)) {
-              this.currentTranslate =
-                this.prevTranslate + diff * dampingFactor * 0.4;
-            } else {
-              this.currentTranslate = this.prevTranslate + diff * dampingFactor;
-            }
-            if (this.currentTranslate > 0) {
+              this.index = 0;
+              this.width = this.elements.wrapper.clientWidth;
+              this.movePosition = this.width;
+              this.maxPosition = -(
+                this.elements.items.length * this.width -
+                this.width
+              );
+              this.isDragging = false;
+              this.startX = 0;
+              this.startY = 0;
               this.currentTranslate = 0;
-            } else if (this.currentTranslate < this.maxPosition) {
-              this.currentTranslate = this.maxPosition;
+              this.prevTranslate = 0;
+              this.dragStartTime = 0;
+              this.hasMovedEnough = false;
+              this.dragDirection = null;
+              this.isScrolling = void 0;
+              this.isMobile = "ontouchstart" in window;
+              this.buttons.prev.addEventListener("click", () =>
+                this.prevSlide(),
+              );
+              this.buttons.next.addEventListener("click", () =>
+                this.nextSlide(),
+              );
+              this.elements.track.addEventListener("mousedown", (e) =>
+                this.startDrag(e),
+              );
+              document.addEventListener("mousemove", (e) => this.drag(e));
+              document.addEventListener("mouseup", () => this.endDrag());
+              document.addEventListener("mouseleave", () => this.endDrag());
+              this.elements.track.addEventListener("touchstart", (e) => {
+                this.startX = e.touches[0].clientX;
+                this.startY = e.touches[0].clientY;
+                this.isDragging = true;
+                this.dragStartTime = Date.now();
+                this.isScrolling = void 0;
+                this.elements.track.style.transition = "none";
+              });
+              this.elements.track.addEventListener("touchmove", (e) => {
+                if (!this.isDragging) return;
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const diffX = currentX - this.startX;
+                const diffY = currentY - this.startY;
+                if (typeof this.isScrolling === "undefined") {
+                  this.isScrolling = Math.abs(diffY) > Math.abs(diffX);
+                }
+                if (this.isScrolling) {
+                  return;
+                }
+                e.preventDefault();
+                this.dragDirection = diffX > 0 ? "right" : "left";
+                if (Math.abs(diffX) > 15) {
+                  this.hasMovedEnough = true;
+                }
+                const dampingFactor = 0.8;
+                const isFirstSlide = this.position === 0;
+                const isLastSlide = this.position <= this.maxPosition;
+                let newTranslate;
+                if ((isFirstSlide && diffX > 0) || (isLastSlide && diffX < 0)) {
+                  newTranslate = this.position + diffX * dampingFactor * 0.5;
+                } else {
+                  newTranslate = this.position + diffX * dampingFactor;
+                }
+                if (newTranslate > 0) {
+                  newTranslate = 0;
+                } else if (newTranslate < this.maxPosition) {
+                  newTranslate = this.maxPosition;
+                }
+                this.currentTranslate = newTranslate;
+                this.elements.track.style.transform = `translateX(${this.currentTranslate}px)`;
+              });
+              this.elements.track.addEventListener("touchend", () => {
+                if (!this.isDragging) return;
+                const dragEndTime = Date.now();
+                const dragDuration = dragEndTime - this.dragStartTime;
+                this.isDragging = false;
+                this.elements.track.style.transition =
+                  "transform 0.25s ease-out";
+                const timeThreshold = 300;
+                const canSlideLeft = this.position > this.maxPosition;
+                const canSlideRight = this.position < 0;
+                if (
+                  this.hasMovedEnough &&
+                  dragDuration < timeThreshold &&
+                  !this.isScrolling
+                ) {
+                  if (this.dragDirection === "left" && canSlideLeft) {
+                    this.nextSlide();
+                  } else if (this.dragDirection === "right" && canSlideRight) {
+                    this.prevSlide();
+                  } else {
+                    this.setPosition();
+                  }
+                } else {
+                  this.setPosition();
+                }
+                this.hasMovedEnough = false;
+                this.isScrolling = void 0;
+              });
+              this.elements.track.addEventListener("dragstart", (e) =>
+                e.preventDefault(),
+              );
+              this.elements.track.style.transition = this.isMobile
+                ? "transform 0.25s ease-out"
+                : "transform 0.3s ease-in-out";
+              this.checkBtns();
             }
-            this.elements.track.style.transform = `translateX(${this.currentTranslate}px)`;
-          }
-          endDrag() {
-            if (!this.isDragging) return;
-            const dragEndTime = Date.now();
-            const dragDuration = dragEndTime - this.dragStartTime;
-            this.isDragging = false;
-            this.elements.track.style.transition = "transform 0.3s ease-in-out";
-            this.elements.track.style.cursor = "grab";
-            const timeThreshold = 400;
-            const canSlideLeft = this.position > this.maxPosition;
-            const canSlideRight = this.position < 0;
-            if (this.hasMovedEnough && dragDuration < timeThreshold) {
-              if (this.dragDirection === "left" && canSlideLeft) {
-                this.nextSlide();
-              } else if (this.dragDirection === "right" && canSlideRight) {
-                this.prevSlide();
+            nextSlide() {
+              if (this.position <= this.maxPosition) return;
+              this.position -= this.movePosition;
+              this.index++;
+              if (this.position < this.maxPosition) {
+                this.position = this.maxPosition;
+              }
+              this.setPosition();
+              this.checkBtns();
+            }
+            prevSlide() {
+              if (this.position >= 0) return;
+              this.position += this.movePosition;
+              this.index--;
+              if (this.position > 0) {
+                this.position = 0;
+              }
+              this.setPosition();
+              this.checkBtns();
+            }
+            setPosition() {
+              this.elements.track.style.transform = `translateX(${this.position}px)`;
+              this.currentTranslate = this.position;
+              this.prevTranslate = this.position;
+            }
+            checkBtns() {
+              this.buttons.prev.disabled = this.position === 0;
+              this.buttons.next.disabled = this.position <= this.maxPosition;
+            }
+            startDrag(e) {
+              this.isDragging = true;
+              this.startX = e.pageX;
+              this.dragStartTime = Date.now();
+              this.hasMovedEnough = false;
+              this.dragDirection = null;
+              this.elements.track.style.transition = "none";
+              this.elements.track.style.cursor = "grabbing";
+            }
+            drag(e) {
+              if (!this.isDragging) return;
+              e.preventDefault();
+              const currentX = e.pageX;
+              const diff = currentX - this.startX;
+              this.dragDirection = diff > 0 ? "right" : "left";
+              if (Math.abs(diff) > 20) {
+                this.hasMovedEnough = true;
+              }
+              const dampingFactor = 0.5;
+              const isFirstSlide = this.position === 0;
+              const isLastSlide = this.position <= this.maxPosition;
+              let newTranslate;
+              if ((isFirstSlide && diff > 0) || (isLastSlide && diff < 0)) {
+                newTranslate = this.position + diff * dampingFactor * 0.4;
+              } else {
+                newTranslate = this.position + diff * dampingFactor;
+              }
+              if (newTranslate > 0) {
+                newTranslate = 0;
+              } else if (newTranslate < this.maxPosition) {
+                newTranslate = this.maxPosition;
+              }
+              this.currentTranslate = newTranslate;
+              this.elements.track.style.transform = `translateX(${this.currentTranslate}px)`;
+            }
+            endDrag() {
+              if (!this.isDragging) return;
+              const dragEndTime = Date.now();
+              const dragDuration = dragEndTime - this.dragStartTime;
+              this.isDragging = false;
+              this.elements.track.style.transition =
+                "transform 0.3s ease-in-out";
+              this.elements.track.style.cursor = "grab";
+              const timeThreshold = 400;
+              const canSlideLeft = this.position > this.maxPosition;
+              const canSlideRight = this.position < 0;
+              if (this.hasMovedEnough && dragDuration < timeThreshold) {
+                if (this.dragDirection === "left" && canSlideLeft) {
+                  this.nextSlide();
+                } else if (this.dragDirection === "right" && canSlideRight) {
+                  this.prevSlide();
+                } else {
+                  this.setPosition();
+                }
               } else {
                 this.setPosition();
               }
-            } else {
-              this.setPosition();
+              this.hasMovedEnough = false;
             }
           }
-        }
-        new slider(document.querySelector(".slider"));
+          new Slider(document.querySelector(".slider"));
+        });
       })();
     </script>
   </body>
