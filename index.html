@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
 
     <style>
       .page-main {
-        background: black;
+        background: linear-gradient(135deg, #050311 0%, #060727 100%);
         /* ! tailwindcss (normalize) v3.4.14 | MIT License | https://tailwindcss.com */
         line-height: 1.5;
         -webkit-text-size-adjust: 100%;
@@ -24,13 +24,14 @@
         font-variation-settings: normal;
         -webkit-tap-highlight-color: transparent;
         margin: 0;
+        padding: 0;
         line-height: inherit;
-        font-size: 14px;
+        font-size: 16px;
         --un-text-opacity: 1;
         color: rgb(255 255 255 / var(--un-text-opacity)) /* #fff */;
-        line-height: 20px;
+        line-height: 21px;
         font-family:
-          Inter,
+          Mulish,
           ui-sans-serif,
           system-ui,
           sans-serif,
@@ -38,12 +39,6 @@
           Segoe UI Emoji,
           Segoe UI Symbol,
           Noto Color Emoji;
-      }
-      @media (min-width: 768px) {
-        .page-main {
-          font-size: 16px;
-          line-height: 21px;
-        }
       }
       .page-main *,
       .page-main ::before,
@@ -55,7 +50,7 @@
       }
       .page-main ::before,
       .page-main ::after {
-        --tw-content: '';
+        --tw-content: "";
       }
       .page-main hr {
         height: 0;
@@ -87,8 +82,8 @@
       .page-main kbd,
       .page-main samp,
       .page-main pre {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-          'Courier New', monospace;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
         font-feature-settings: normal;
         font-variation-settings: normal;
         font-size: 1em;
@@ -147,7 +142,7 @@
       .page-main ::-webkit-outer-spin-button {
         height: auto;
       }
-      .page-main [type='search'] {
+      .page-main [type="search"] {
         -webkit-appearance: textfield;
         outline-offset: -2px;
       }
@@ -207,7 +202,7 @@
         color: #9ca3af;
       }
       .page-main button,
-      .page-main [role='button'] {
+      .page-main [role="button"] {
         cursor: pointer;
       }
       .page-main :disabled {
@@ -229,101 +224,92 @@
         max-width: 100%;
         height: auto;
       }
-      .page-main [hidden]:where(:not([hidden='until-found'])) {
+      .page-main [hidden]:where(:not([hidden="until-found"])) {
         display: none;
       }
-      .page-main .keen-slider:not([data-keen-slider-disabled]) {
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: transparent;
-        align-content: flex-start;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        touch-action: pan-y;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -khtml-user-select: none;
-        width: 100%;
-      }
-      .page-main .keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide {
-        min-height: 100%;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-      .page-main .keen-slider:not([data-keen-slider-disabled])[data-keen-slider-reverse] {
-        flex-direction: row-reverse;
-      }
-      .page-main .keen-slider:not([data-keen-slider-disabled])[data-keen-slider-v] {
-        flex-wrap: wrap;
-      }
       .page-main .section-hero {
-        min-height: 220px;
+        position: relative;
+        min-height: 265px;
         display: flex;
-        border-radius: 8px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 18px;
-        padding-bottom: 18px;
+        flex-direction: column;
+        border-radius: 32px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 30px;
+        padding-bottom: 20px;
         background: image-set(
-            url('./images/hero-bg-mobile.jpg') type('image/jpg') 1x,
-            url('./images/hero-bg-mobile@2x.jpg') type('image/jpg') 2x
+            url("./images/hero-bg-mobile.png") type("image/png") 1x
           )
-          right center no-repeat;
+          center top no-repeat;
         background-size: cover;
       }
       @media (min-width: 768px) {
         .page-main .section-hero {
-          min-height: 250px;
+          min-height: 330px;
+          flex-direction: row;
           align-items: center;
-          padding: 40px;
+          justify-content: space-between;
+          gap: 40px;
+          padding-left: 44px;
+          padding-top: 44px;
+          padding-bottom: 32px;
+          padding-right: 44px;
+        }
+      }
+      @media (min-width: 1280px) {
+        .page-main .section-hero {
+          padding-right: 80px;
         }
       }
       @media (min-width: 768px) {
         .page-main .section-hero {
           background: image-set(
-              url('./images/hero-bg-desktop.jpg') type('image/jpg') 1x,
-              url('./images/hero-bg-desktop@2x.jpg') type('image/jpg') 2x
+              url("./images/hero-bg-desktop.png") type("image/png") 1x,
+              url("./images/hero-bg-desktop@2x.png") type("image/png") 2x
             )
             right center no-repeat;
           background-size: cover;
         }
       }
       .page-main .section-hero .wrapper {
-        max-width: 215px;
-        width: 100%;
+        height: 100%;
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         align-items: flex-start;
       }
       @media (min-width: 768px) {
         .page-main .section-hero .wrapper {
-          margin-top: 8px;
-          max-width: 651px;
+          margin-top: -20px;
+          display: block;
         }
       }
       .page-main .section-hero .title {
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 21px;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 28px;
       }
       @media (min-width: 768px) {
         .page-main .section-hero .title {
-          font-size: 24px;
-          line-height: 35px;
+          font-size: 40px;
+          line-height: 58px;
         }
       }
+      .page-main .section-hero .title__gradient {
+        background: linear-gradient(180deg, #7cc1ff 0%, #8499ff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       .page-main .section-hero .text {
-        margin-top: 6px;
-        padding-bottom: 20px;
-        font-size: 12px;
-        line-height: 18px;
+        margin-top: 12px;
+        padding-bottom: 12px;
+        font-size: 14px;
+        line-height: 20px;
       }
       @media (min-width: 768px) {
         .page-main .section-hero .text {
-          margin-top: 8px;
+          margin-top: 16px;
           padding-bottom: 0;
           font-size: 16px;
           line-height: 21px;
@@ -334,124 +320,25 @@
       }
       @media (min-width: 768px) {
         .page-main .section-hero .base-button {
-          margin-top: 20px;
+          margin-top: 32px;
         }
       }
-      .page-main .section-mobile-app {
-        padding-top: 24px;
+      .page-main .section-hero .image {
+        position: absolute;
+        right: 16px;
+        bottom: 12px;
+        max-width: 150px;
       }
       @media (min-width: 768px) {
-        .page-main .section-mobile-app {
-          padding-top: 40px;
-        }
-      }
-      .page-main .section-mobile-app .title {
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .title {
-          font-size: 24px;
-          line-height: 28px;
-        }
-      }
-      .page-main .section-mobile-app .benefits {
-        margin-top: 8px;
-        display: flex;
-        gap: 12px;
-        overflow: auto;
-        scrollbar-width: none;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefits {
-          margin-top: 16px;
-          gap: 24px;
-        }
-      }
-      @media (min-width: 1024px) {
-        .page-main .section-mobile-app .benefits {
-          overflow: visible;
-        }
-      }
-      .page-main .section-mobile-app .benefit-card {
-        max-width: 270px;
-        width: 100%;
-        min-height: 285px;
-        display: flex;
-        flex-shrink: 0;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        --un-bg-opacity: 1;
-        background-color: rgb(19 26 45 / var(--un-bg-opacity)) /* #131a2d */;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 14px;
-        padding-right: 14px;
-        text-align: center;
-        box-shadow: inset 0 4px 4px 0 #303e64;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefit-card {
-          max-width: 434px;
-          min-height: 333px;
-          gap: 20px;
-          padding-top: 25px;
-          padding-bottom: 25px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-      @media (min-width: 1024px) {
-        .page-main .section-mobile-app .benefit-card {
-          flex-shrink: 1;
-        }
-      }
-      .page-main .section-mobile-app .benefit-card .image {
-        width: 120px;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefit-card .image {
-          width: 150px;
-        }
-      }
-      .page-main .section-mobile-app .benefit-card .title {
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-        background: linear-gradient(180deg, #00b6ef 0%, #75acff 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefit-card .title {
-          font-size: 20px;
-          line-height: 24px;
-        }
-      }
-      .page-main .section-mobile-app .benefit-card .description {
-        font-size: 14px;
-        line-height: 20px;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefit-card .description {
-          font-size: 16px;
-          line-height: 21px;
-        }
-      }
-      .page-main .section-mobile-app .benefit-card .show-desktop {
-        display: none;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-mobile-app .benefit-card .show-desktop {
-          display: inline;
+        .page-main .section-hero .image {
+          position: static;
+          max-width: 396px;
         }
       }
       .page-main .section-instructions {
-        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 28px;
       }
       @media (min-width: 768px) {
         .page-main .section-instructions {
@@ -459,244 +346,223 @@
         }
       }
       .page-main .section-instructions .title {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      .page-main .section-instructions .slider {
+        margin-top: 28px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .slider {
+          margin-top: 40px;
+        }
+      }
+      .page-main .section-instructions .slider-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        scroll-behavior: smooth;
+      }
+      .page-main .section-instructions .slider-slide {
+        cursor: grab;
+        flex-shrink: 0;
+        width: 100%;
+      }
+      .page-main .section-instructions .slider-slide:active {
+        cursor: grabbing;
+      }
+      .page-main .section-instructions .slide-image-desktop {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .slide-image-desktop {
+          margin-top: 16px;
+          display: block;
+        }
+      }
+      .page-main .section-instructions .slide-image-mobile {
+        margin-top: 28px;
+        border-radius: 20px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .slide-image-mobile {
+          display: none;
+        }
+      }
+      .page-main .section-instructions .nav-buttons {
+        margin-top: 28px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        text-align: right;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .nav-buttons {
+          margin-top: 16px;
+        }
+      }
+      .page-main .section-instructions .slider__prev,
+      .page-main .section-instructions .slider__next {
+        background-color: transparent /* transparent */;
+      }
+      .page-main .section-instructions .slider__prev:disabled,
+      .page-main .section-instructions .slider__next:disabled {
+        opacity: 0.4;
+      }
+      .page-main .section-instructions .base-button {
+        align-self: center;
+        display: none !important;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-instructions .base-button {
+          display: inline-flex !important;
+        }
+      }
+      .page-main .section-info {
+        padding-top: 40px;
+      }
+      .page-main .section-info .title {
         font-size: 16px;
         font-weight: 700;
-        line-height: 20px;
+        line-height: 21px;
       }
       @media (min-width: 768px) {
-        .page-main .section-instructions .title {
-          font-size: 24px;
-          line-height: 28px;
-        }
-      }
-      .page-main .section-instructions .text {
-        margin-top: 8px;
-        --un-text-opacity: 1;
-        color: rgb(129 148 200 / var(--un-text-opacity)) /* #8194c8 */;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-instructions .text {
-          margin-top: 0;
-        }
-      }
-      .page-main .section-instructions .install-block {
-        margin-top: 8px;
-        min-height: 916px;
-        border-radius: 12px;
-        padding-bottom: 53px;
-        background: linear-gradient(
-          180deg,
-          rgba(142, 84, 233, 0.2) 0%,
-          rgba(39, 118, 230, 0.2) 100%
-        );
-      }
-      @media (min-width: 768px) {
-        .page-main .section-instructions .install-block {
-          margin-top: 16px;
-          min-height: 830px;
-          border-radius: 16px;
-          padding-left: 24px;
-          padding-right: 24px;
-        }
-      }
-      .page-main .section-instructions .tabs {
-        width: 100%;
-        min-height: 64px;
-        display: flex;
-        overflow: auto;
-        padding-left: 24px;
-        padding-right: 24px;
-        scrollbar-width: none;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-instructions .tabs {
-          min-height: 88px;
-          overflow: visible;
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-      .page-main .section-instructions .tab {
-        display: grid;
-        min-width: 100px;
-        flex-shrink: 0;
-        place-items: center;
-        border-bottom-width: 1px;
-        --un-border-opacity: 1;
-        --un-border-bottom-opacity: var(--un-border-opacity);
-        border-bottom-color: rgb(129 148 200 / var(--un-border-bottom-opacity));
-        background-color: transparent /* transparent */;
-        padding-left: 14px;
-        padding-right: 14px;
-        font-size: 16px;
-        --un-text-opacity: 1;
-        color: rgb(129 148 200 / var(--un-text-opacity)) /* #8194c8 */;
-        line-height: 20px;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-instructions .tab {
-          min-width: none;
-          flex-shrink: 1;
-          flex-grow: 1;
+        .page-main .section-info .title {
           font-size: 20px;
           line-height: 24px;
         }
       }
-      .page-main .section-instructions .tab.active {
-        position: relative;
-        font-weight: 700;
-        background: linear-gradient(180deg, #00b6ef 0%, #75acff 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .page-main .section-info .text-1 {
+        margin-top: 5px;
       }
-      .page-main .section-instructions .tab.active::before {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        border-bottom-width: 1px;
-        --un-border-opacity: 1;
-        --un-border-bottom-opacity: var(--un-border-opacity);
-        border-bottom-color: rgb(114 172 254 / var(--un-border-bottom-opacity));
-        content: '';
+      .page-main .section-info .text-2 {
+        margin-top: 20px;
       }
-      .page-main .section-instructions .tab-contents {
-        position: relative;
-        margin-top: 15px;
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-      @media (min-width: 768px) {
-        .page-main .section-instructions .tab-contents {
-          margin-top: 32px;
-        }
-      }
-      .page-main .section-instructions .tab-content {
-        cursor: grab;
-      }
-      .page-main .section-instructions .tab-content:active {
-        cursor: grabbing;
-      }
-      .page-main .section-instructions .nav-buttons {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-        display: flex;
-        gap: 24px;
-      }
-      .page-main .section-instructions .blaze-prev,
-      .page-main .section-instructions .blaze-next {
-        overflow: hidden;
-        border-radius: 9999px;
-        background-color: transparent /* transparent */;
-      }
-      .page-main .section-instructions .blaze-prev.disabled,
-      .page-main .section-instructions .blaze-next.disabled {
-        opacity: 0.4;
-      }
-      .page-main .section-instructions .slide {
+      .page-main .section-info .wrapper {
+        margin-top: 28px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 16px;
       }
-      .page-main .section-instructions .slide-text {
-        width: 100%;
+      @media (min-width: 768px) {
+        .page-main .section-info .wrapper {
+          margin-top: 40px;
+          flex-direction: row;
+          gap: 32px;
+        }
+      }
+      .page-main .section-info .card {
+        position: relative;
+        min-height: 282px;
         display: flex;
-        gap: 8px;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 12px;
+        --un-bg-opacity: 1;
+        background-color: rgb(15 17 39 / var(--un-bg-opacity)) /* #0f1127 */;
+        padding: 25px;
       }
       @media (min-width: 768px) {
-        .page-main .section-instructions .slide-text {
-          align-items: center;
-          gap: 14px;
-          padding-right: 130px;
+        .page-main .section-info .card {
+          min-height: 299px;
+          padding: 35px;
         }
       }
-      .page-main .section-instructions .number {
+      .page-main .section-info .blur {
+        position: absolute;
+        z-index: 0;
+        width: 170px;
+        height: 145px;
+        border-radius: 9999px;
+        opacity: 0.5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(115deg);
+        background: linear-gradient(225deg, #75e6ff 0%, #878bff 100%);
+        filter: blur(70px);
       }
       @media (min-width: 768px) {
-        .page-main .section-instructions .number {
-          display: grid;
-          width: 36px;
-          height: 36px;
-          place-items: center;
-          border-radius: 9999px;
-          --un-bg-opacity: 1;
-          background-color: rgb(255 255 255 / var(--un-bg-opacity)) /* #fff */;
-          font-size: 24px;
-          --un-text-opacity: 1;
-          color: rgb(27 0 12 / var(--un-text-opacity)) /* #1b000c */;
-          font-weight: 700;
-          line-height: 35px;
+        .page-main .section-info .blur {
+          opacity: 0.7;
+          filter: blur(90px);
         }
       }
-      .page-main .section-instructions .slide-image {
-        margin-top: 24px;
-        width: 100%;
-        max-width: 1000px;
-        align-self: center;
-      }
-      .page-main
-        .section-instructions
-        .tab-content.desktop:nth-of-type(2)
-        .slide:nth-of-type(3)
-        .slide-image {
-        max-width: 500px;
-      }
-      .page-main
-        .section-instructions
-        .tab-content.desktop:nth-of-type(3)
-        .slide:nth-of-type(4)
-        .slide-image {
-        max-width: 700px;
-      }
-      .page-main .section-instructions .tab-content.desktop {
-        display: none;
+      .page-main .section-info .card-title {
+        min-height: 40px;
+        max-width: 93%;
+        align-self: flex-start;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
       }
       @media (min-width: 768px) {
-        .page-main .section-instructions .tab-content.desktop {
-          display: flex;
+        .page-main .section-info .card-title {
+          min-height: auto;
+          max-width: none;
+          align-self: center;
+          font-size: 16px;
+          line-height: 21px;
         }
       }
-      .page-main .section-instructions .tab-content.mobile {
-        display: flex;
+      .page-main .section-info .image-wrapper {
+        padding-bottom: 16px;
+      }
+      .page-main .section-info .card-image1 {
+        margin-top: 12px;
+        width: 150px;
       }
       @media (min-width: 768px) {
-        .page-main .section-instructions .tab-content.mobile {
-          display: none;
+        .page-main .section-info .card-image1 {
+          margin-top: 24px;
         }
+      }
+      .page-main .section-info .card-image2 {
+        margin-top: 12px;
+        width: 120px;
+      }
+      @media (min-width: 768px) {
+        .page-main .section-info .card-image2 {
+          margin-top: 24px;
+        }
+      }
+      .page-main .section-info .base-button {
+        margin-top: auto;
       }
       .page-main .base-button {
         display: inline-grid;
-        min-height: 30px;
+        min-height: 40px;
         place-items: center;
-        border-radius: 8px;
-        padding-left: 18px;
-        padding-right: 18px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        font-size: 12px;
+        border-radius: 100px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 14px;
         font-weight: 700;
-        line-height: 16px;
-        transition-property: all;
+        line-height: 20px;
+        text-transform: uppercase;
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
-        background: linear-gradient(180deg, #2bbeff 0%, #0184ff 100%);
+        background: linear-gradient(
+          180deg,
+          #75e6ff 0%,
+          #75e6ff 0.01%,
+          #878bff 100%
+        );
       }
-      @media (min-width: 768px) {
-        .page-main .base-button {
-          min-height: 40px;
-          padding-left: 24px;
-          padding-right: 24px;
-          padding-top: 8px;
-          padding-bottom: 8px;
-          font-size: 14px;
-          line-height: 20px;
-        }
+      .page-main .base-button:hover {
+        box-shadow: 0 0 15px 0 rgba(125, 190, 255, 0.4);
       }
-      .page-main .base-button:hover,
       .page-main .base-button:active {
-        background: linear-gradient(180deg, #0092bf 0%, #5e8acc 100%);
+        background: linear-gradient(180deg, #5eb5cc 0%, #6b73cc 100%);
+        box-shadow: none;
       }
       .page-main .base-button:disabled {
         opacity: 0.5;
@@ -704,13 +570,13 @@
       .page-main .page-main__container {
         margin-left: auto;
         margin-right: auto;
-        max-width: 1380px;
+        max-width: 1350px;
         padding-left: 15px;
         padding-right: 15px;
       }
       @media (min-width: 768px) {
         .page-main .page-main__container {
-          padding-top: 60px;
+          padding-top: 40px;
         }
       }
     </style>
@@ -720,299 +586,253 @@
       <div class="page-main__container">
         <section class="section-hero">
           <div class="wrapper">
-            <h1 class="title">Lorem ipsum dolor sit amet consectetur.</h1>
+            <h1 class="title">
+              Руководство по оплате <span class="title__gradient">криптой</span>
+            </h1>
             <p class="text">
-              Lorem ipsum dolor sit amet consectetur. Nunc nunc tempus non iaculis ligula eget sit
-              duis nunc.
+              Выбирай криптовалюту и делай депозит легко и просто за несколько
+              минут!
             </p>
-            <a class="base-button" href="#">Играть Сейчас</a>
+            <a class="base-button" href="#">Deposit</a>
           </div>
-        </section>
-
-        <section class="section-mobile-app">
-          <h2 class="title">Мобильное приложение Arkada</h2>
-          <div class="benefits">
-            <div class="benefit-card">
-              <img
-                class="image"
-                src="./images/stopwatch.png"
-                srcset="images/stopwatch@2x.png 2x"
-                alt="#"
-              />
-              <h3 class="title">Мгновенный доступ</h3>
-              <p class="description">
-                Получите доступ к любимым играм в любое время и в любом месте с нашим PWA — без
-                ограничений!
-              </p>
-            </div>
-
-            <div class="benefit-card">
-              <img
-                class="image"
-                src="./images/present.png"
-                srcset="images/present@2x.png 2x"
-                alt="#"
-              />
-              <h3 class="title">Уникальные бонусы</h3>
-              <p class="description">
-                Откройте эксклюзивные бонусы
-                <span class="show-desktop">и награды</span> с нашим PWA — улучшенный игровой
-                процесс, только для пользователей приложения!
-              </p>
-            </div>
-
-            <div class="benefit-card">
-              <img class="image" src="./images/lock.png" srcset="images/lock@2x.png 2x" alt="#" />
-              <h3 class="title">Безопасность и надежность</h3>
-              <p class="description">
-                Ощутите высочайший уровень безопасности с нашим PWA — безопасным, зашифрованным и
-                надежным.
-              </p>
-            </div>
-          </div>
+          <img
+            class="image"
+            src="./images/coin.png"
+            srcset="images/coin@2x.png 2x"
+            alt="#"
+          />
         </section>
 
         <section class="section-instructions">
-          <h2 class="title">Установить приложение Казино</h2>
-          <p class="text">
-            Ваши любимые игры у вас под рукой. Быстрые выплаты. Доступ за секунду к большим бонусам
-            и захватывающим турнирам. Все, что вы любите, только лучше.
+          <h2 class="title">
+            Давай вместе разберёмся, как сделать депозит в валюте BTC всего за
+            несколько шагов!
+          </h2>
+
+          <div>
+            <div class="slider">
+              <div class="slider-wrapper">
+                <div class="slider-slide">
+                  <p>1. Войди в свой аккаунт на сайте нашего казино.</p>
+                  <img
+                    class="slide-image-desktop"
+                    src="./images/step1-desktop.jpg"
+                    srcset="images/step1-desktop@2x.jpg"
+                    alt="#"
+                  />
+                  <img
+                    class="slide-image-mobile"
+                    src="./images/step1-mobile.jpg"
+                    srcset="images/step1-mobile@2x.jpg"
+                    alt="#"
+                  />
+                </div>
+                <div class="slider-slide">
+                  <p>
+                    2. Нажми на кнопку “ДЕПОЗИТ” и выбери криптовалюту, которой
+                    ты хочешь сделать оплату.
+                  </p>
+                  <img
+                    class="slide-image-desktop"
+                    src="./images/step2-desktop.jpg"
+                    srcset="images/step2-desktop@2x.jpg"
+                    alt="#"
+                  />
+                  <img
+                    class="slide-image-mobile"
+                    src="./images/step2-mobile.jpg"
+                    srcset="images/step2-mobile@2x.jpg"
+                    alt="#"
+                  />
+                </div>
+                <div class="slider-slide">
+                  <p>
+                    3. Скопируй сгенерированный адрес для депозитов или
+                    отсканируй QR код с помощью приложения своего
+                    криптокошелька.
+                  </p>
+                  <img
+                    class="slide-image-desktop"
+                    src="./images/step3-desktop.jpg"
+                    srcset="images/step3-desktop@2x.jpg"
+                    alt="#"
+                  />
+                  <img
+                    class="slide-image-mobile"
+                    src="./images/step3-mobile.jpg"
+                    srcset="images/step3-mobile@2x.jpg"
+                    alt="#"
+                  />
+                </div>
+                <div class="slider-slide">
+                  <p>
+                    4. В форме отправки выбери криптовалюту, введи скопированный
+                    адрес и подтверди оплату.
+                  </p>
+                  <img
+                    class="slide-image-desktop"
+                    src="./images/step4-desktop.jpg"
+                    srcset="images/step4-desktop@2x.jpg"
+                    alt="#"
+                  />
+                  <img
+                    class="slide-image-mobile"
+                    src="./images/step4-mobile.jpg"
+                    srcset="images/step4-mobile@2x.jpg"
+                    alt="#"
+                  />
+                </div>
+                <div class="slider-slide">
+                  <p>
+                    5. В форме отправки выбери криптовалюту, введи скопированный
+                    адрес и подтверди оплату.
+                  </p>
+                  <img
+                    class="slide-image-desktop"
+                    src="./images/step5-desktop.jpg"
+                    srcset="images/step5-desktop@2x.jpg"
+                    alt="#"
+                  />
+                  <img
+                    class="slide-image-mobile"
+                    src="./images/step5-mobile.jpg"
+                    srcset="images/step5-mobile@2x.jpg"
+                    alt="#"
+                  />
+                </div>
+              </div>
+
+              <div class="nav-buttons">
+                <button class="slider__prev">
+                  <svg
+                    width="30"
+                    height="31"
+                    viewBox="0 0 30 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_67156_174482)">
+                      <rect
+                        x="-0.5"
+                        y="0.5"
+                        width="29"
+                        height="29"
+                        rx="14.5"
+                        transform="matrix(-1 0 0 1 29 0.356934)"
+                        fill="white"
+                        fill-opacity="0.1"
+                        stroke="#F0FAFF"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.6266 7.66639C17.0408 7.0806 16.091 7.0806 15.5053 7.66639L8.87485 14.2968C8.28906 14.8826 8.28906 15.8323 8.87485 16.4181L15.5053 23.0485C16.091 23.6343 17.0408 23.6343 17.6266 23.0485C18.2124 22.4627 18.2124 21.513 17.6266 20.9272L12.0568 15.3575L17.6266 9.78771C18.2124 9.20192 18.2124 8.25218 17.6266 7.66639Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_67156_174482">
+                        <rect
+                          width="30"
+                          height="30"
+                          rx="15"
+                          transform="matrix(-1 0 0 1 30 0.356934)"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+                <button class="slider__next">
+                  <svg
+                    width="30"
+                    height="31"
+                    viewBox="0 0 30 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_67156_174483)">
+                      <rect
+                        x="0.5"
+                        y="1.00684"
+                        width="29"
+                        height="29"
+                        rx="14.5"
+                        fill="white"
+                        fill-opacity="0.1"
+                        stroke="#F0FAFF"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.3734 7.81629C12.9592 7.23051 13.909 7.23051 14.4947 7.81629L21.1252 14.4467C21.7109 15.0325 21.7109 15.9822 21.1252 16.568L14.4947 23.1984C13.909 23.7842 12.9592 23.7842 12.3734 23.1984C11.7876 22.6126 11.7876 21.6629 12.3734 21.0771L17.9432 15.5074L12.3734 9.93761C11.7876 9.35183 11.7876 8.40208 12.3734 7.81629Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_67156_174483">
+                        <rect
+                          y="0.506836"
+                          width="30"
+                          height="30"
+                          rx="15"
+                          fill="white"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <a class="base-button" href="#">Deposit</a>
+        </section>
+
+        <section class="section-info">
+          <h2 class="title">Важный момент!</h2>
+          <p class="text-1">
+            Перед подтверждением отправки средств проверь правильность выбора
+            валюты и сети.<br />
+            Если средства будут отправлены в неверной сети, они не будут
+            начислены на баланс казино.
           </p>
-          <div class="install-block">
-            <div class="slider_desktop">
-              <div class="tabs">
-                <button class="tab" data-target="tab1">Safari</button>
-                <button class="tab" data-target="tab2">Google Chrome</button>
-                <button class="tab" data-target="tab3">Yandex Browser</button>
+          <p class="text-2">
+            После отправки криптовалюта будет зачислена на баланс казино в
+            течение нескольких минут. Наслаждайся игрой и не забывай про
+            доступные бонусы!
+          </p>
+          <div class="wrapper">
+            <div class="card">
+              <div class="blur"></div>
+              <h3 class="card-title">
+                Как купить криптовалюту с рублевой карты?
+              </h3>
+              <div class="image-wrapper">
+                <img
+                  class="card-image1"
+                  src="./images/card.png"
+                  srcset="images/card@2x.png 2x"
+                  alt=""
+                />
               </div>
-              <div class="tab-contents">
-                <div class="tab-content desktop" id="tab1-desktop">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1</div>
-                        <p>
-                          Зайдите в браузер, откройте наше казино Arkada и нажмите кнопку «Файл» в
-                          меню. В открывшемся меню выберите «Добавить в док».
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/safari-step-1-desktop.jpg"
-                        srcset="images/safari-step-1-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2</div>
-                        <p>Настройте имя приложения, а затем нажмите кнопку «Добавить».</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/safari-step-2-desktop.jpg"
-                        srcset="images/safari-step-2-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content desktop" id="tab2-desktop">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1</div>
-                        <p>Нажмите на значок в правом верхнем углу.</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/google-chrome-step-1-desktop.jpg"
-                        srcset="images/google-chrome-step-1-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2</div>
-                        <p>
-                          В окне подтверждения нажмите кнопку «Установить», чтобы добавить PWA на
-                          главный экран.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/google-chrome-step-2-desktop.jpg"
-                        srcset="images/google-chrome-step-2-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">3</div>
-                        <p>Теперь PWA добавлен на домашний экран в виде значка приложения.</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/google-chrome-step-3-desktop.png"
-                        srcset="images/google-chrome-step-3-desktop@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content desktop" id="tab3-desktop">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1</div>
-                        <p>Нажмите на 3 точки в правом верхнем углу.</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-1-desktop.jpg"
-                        srcset="images/yandex-browser-step-1-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2</div>
-                        <p>В появившемся меню нажмите кнопку «Установить приложение».</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-2-desktop.jpg"
-                        srcset="images/yandex-browser-step-2-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">3</div>
-                        <p>
-                          Выберите, в каком направлении вы хотите установить приложение: в отдельном
-                          окне или в текущем окне браузера.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-3-desktop.jpg"
-                        srcset="images/yandex-browser-step-3-desktop@2x.jpg"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content mobile" id="tab1-mobile">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1.</div>
-                        <p>
-                          Зайдите в браузер, откройте наше казино Arkada и нажмите кнопку «Файл» в
-                          меню.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/safari-step-1-mobile.png"
-                        srcset="images/safari-step-1-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2.</div>
-                        <p>
-                          В открывшемся меню выберите «Добавить на главный экран». Если параметр
-                          «Добавить на главный экран» не отображается, прокрутите список вниз и
-                          настройте параметры.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/safari-step-2-mobile.png"
-                        srcset="images/safari-step-2-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content mobile" id="tab2-mobile">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1.</div>
-                        <p>
-                          Откройте браузер и перейдите на сайт PWA. Нажмите на кнопку с тремя
-                          точками в правом верхнем углу.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/google-chrome-step-1-mobile.png"
-                        srcset="images/google-chrome-step-1-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2.</div>
-                        <p>В открывшемся меню выберите «Добавить на главный экран».</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/google-chrome-step-2-mobile.png"
-                        srcset="images/google-chrome-step-2-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content mobile" id="tab3-mobile">
-                  <div class="keen-slider">
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">1.</div>
-                        <p>
-                          Откройте Yandex Browser и нажмите на значок с тремя точками в правом
-                          верхнем углу.
-                        </p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-1-mobile.png"
-                        srcset="images/yandex-browser-step-1-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">2.</div>
-                        <p>Выберите пункт «Установить приложение» в появившемся меню.</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-2-mobile.png"
-                        srcset="images/yandex-browser-step-2-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                    <div class="keen-slider__slide">
-                      <div class="slide-text">
-                        <div class="number">345.</div>
-                        <p>Выберите пункт «Установить приложение» в появившемся меню.</p>
-                      </div>
-                      <img
-                        class="slide-image"
-                        src="./images/yandex-browser-step-2-mobile.png"
-                        srcset="images/yandex-browser-step-2-mobile@2x.png"
-                        alt="#"
-                      />
-                    </div>
-                  </div>
-                </div>
+
+              <a class="base-button" href="#">узнать больше</a>
+            </div>
+
+            <div class="card">
+              <div class="blur"></div>
+              <h3 class="card-title">Бонусы и предложения от нашего казино</h3>
+              <div class="image-wrapper">
+                <img
+                  class="card-image2"
+                  src="./images/present.png"
+                  srcset="images/present@2x.png 2x"
+                  alt=""
+                />
               </div>
+
+              <a class="base-button" href="#">узнать больше</a>
             </div>
           </div>
         </section>
@@ -1020,1059 +840,162 @@
     </main>
 
     <script>
-      /*!
-       * Blaze Slider
-       * https://github.com/blaze-slider/blaze-slider
-       *
-       * License: MIT
-       * (c) Blaze Slider Authors. For details, see the LICENSE file in the repository.
-       */
-      var n = function () {
-        return (
-          (n =
-            Object.assign ||
-            function (n2) {
-              for (var t2, i2 = 1, e2 = arguments.length; i2 < e2; i2++)
-                for (var r2 in (t2 = arguments[i2]))
-                  Object.prototype.hasOwnProperty.call(t2, r2) && (n2[r2] = t2[r2]);
-              return n2;
-            }),
-          n.apply(this, arguments)
-        );
-      };
-      function t(n2, t2, i2) {
-        for (var e2, r2 = 0, a2 = t2.length; r2 < a2; r2++)
-          (!e2 && r2 in t2) ||
-            (e2 || (e2 = Array.prototype.slice.call(t2, 0, r2)), (e2[r2] = t2[r2]));
-        return n2.concat(e2 || Array.prototype.slice.call(t2));
-      }
-      function i(n2) {
-        return Array.prototype.slice.call(n2);
-      }
-      function e(n2, t2) {
-        var i2 = Math.floor(n2);
-        return i2 === t2 || i2 + 1 === t2 ? n2 : t2;
-      }
-      function r() {
-        return Date.now();
-      }
-      function a(n2, t2, i2) {
-        if (((t2 = 'data-keen-slider-' + t2), null === i2)) return n2.removeAttribute(t2);
-        n2.setAttribute(t2, i2 || '');
-      }
-      function o(n2, t2) {
-        return (
-          (t2 = t2 || document),
-          'function' == typeof n2 && (n2 = n2(t2)),
-          Array.isArray(n2)
-            ? n2
-            : 'string' == typeof n2
-              ? i(t2.querySelectorAll(n2))
-              : n2 instanceof HTMLElement
-                ? [n2]
-                : n2 instanceof NodeList
-                  ? i(n2)
-                  : []
-        );
-      }
-      function u(n2) {
-        n2.raw && (n2 = n2.raw), n2.cancelable && !n2.defaultPrevented && n2.preventDefault();
-      }
-      function s(n2) {
-        n2.raw && (n2 = n2.raw), n2.stopPropagation && n2.stopPropagation();
-      }
-      function c() {
-        var n2 = [];
-        return {
-          add: function (t2, i2, e2, r2) {
-            t2.addListener ? t2.addListener(e2) : t2.addEventListener(i2, e2, r2),
-              n2.push([t2, i2, e2, r2]);
-          },
-          input: function (n3, t2, i2, e2) {
-            this.add(
-              n3,
-              t2,
-              /* @__PURE__ */ (function (n4) {
-                return function (t3) {
-                  t3.nativeEvent && (t3 = t3.nativeEvent);
-                  var i3 = t3.changedTouches || [],
-                    e3 = t3.targetTouches || [],
-                    r2 = t3.detail && t3.detail.x ? t3.detail : null;
-                  return n4({
-                    id: r2
-                      ? r2.identifier
-                        ? r2.identifier
-                        : 'i'
-                      : e3[0]
-                        ? e3[0]
-                          ? e3[0].identifier
-                          : 'e'
-                        : 'd',
-                    idChanged: r2
-                      ? r2.identifier
-                        ? r2.identifier
-                        : 'i'
-                      : i3[0]
-                        ? i3[0]
-                          ? i3[0].identifier
-                          : 'e'
-                        : 'd',
-                    raw: t3,
-                    x: r2 && r2.x ? r2.x : e3[0] ? e3[0].screenX : r2 ? r2.x : t3.pageX,
-                    y: r2 && r2.y ? r2.y : e3[0] ? e3[0].screenY : r2 ? r2.y : t3.pageY,
-                  });
-                };
-              })(i2),
-              e2
-            );
-          },
-          purge: function () {
-            n2.forEach(function (n3) {
-              n3[0].removeListener
-                ? n3[0].removeListener(n3[2])
-                : n3[0].removeEventListener(n3[1], n3[2], n3[3]);
-            }),
-              (n2 = []);
-          },
-        };
-      }
-      function d(n2, t2, i2) {
-        return Math.min(Math.max(n2, t2), i2);
-      }
-      function l(n2) {
-        return (n2 > 0 ? 1 : 0) - (n2 < 0 ? 1 : 0) || +n2;
-      }
-      function f(n2) {
-        var t2 = n2.getBoundingClientRect();
-        return {
-          height: e(t2.height, n2.offsetHeight),
-          width: e(t2.width, n2.offsetWidth),
-        };
-      }
-      function p(n2, t2, i2, e2) {
-        var r2 = n2 && n2[t2];
-        return null == r2 ? i2 : e2 && 'function' == typeof r2 ? r2() : r2;
-      }
-      function v(n2) {
-        return Math.round(1e6 * n2) / 1e6;
-      }
-      function h(n2) {
-        var t2, i2, e2, r2, a2, o2;
-        function u2(t3) {
-          o2 || (o2 = t3), s2(true);
-          var a3 = t3 - o2;
-          a3 > e2 && (a3 = e2);
-          var l3 = r2[i2];
-          if (l3[3] < a3) return i2++, u2(t3);
-          var f2 = l3[2],
-            p2 = l3[4],
-            v2 = l3[0],
-            h2 = l3[1] * (0, l3[5])(0 === p2 ? 1 : (a3 - f2) / p2);
-          if ((h2 && n2.track.to(v2 + h2), a3 < e2)) return d2();
-          (o2 = null), s2(false), c2(null), n2.emit('animationEnded');
-        }
-        function s2(n3) {
-          t2.active = n3;
-        }
-        function c2(n3) {
-          t2.targetIdx = n3;
-        }
-        function d2() {
-          var n3;
-          (n3 = u2), (a2 = window.requestAnimationFrame(n3));
-        }
-        function l2() {
-          var t3;
-          (t3 = a2),
-            window.cancelAnimationFrame(t3),
-            s2(false),
-            c2(null),
-            o2 && n2.emit('animationStopped'),
-            (o2 = null);
-        }
-        return (t2 = {
-          active: false,
-          start: function (t3) {
-            if ((l2(), n2.track.details)) {
-              var a3 = 0,
-                o3 = n2.track.details.position;
-              (i2 = 0),
-                (e2 = 0),
-                (r2 = t3.map(function (n3) {
-                  var t4,
-                    i3 = Number(o3),
-                    r3 = null !== (t4 = n3.earlyExit) && void 0 !== t4 ? t4 : n3.duration,
-                    u3 = n3.easing,
-                    s3 = n3.distance * u3(r3 / n3.duration) || 0;
-                  o3 += s3;
-                  var c3 = e2;
-                  return (e2 += r3), (a3 += s3), [i3, n3.distance, c3, e2, n3.duration, u3];
-                })),
-                c2(n2.track.distToIdx(a3)),
-                d2(),
-                n2.emit('animationStarted');
-            }
-          },
-          stop: l2,
-          targetIdx: null,
-        });
-      }
-      function m(n2) {
-        var i2,
-          e2,
-          a2,
-          o2,
-          u2,
-          s2,
-          c2,
-          f2,
-          h2,
-          m2,
-          g2,
-          b2,
-          x2,
-          k2,
-          y2 = 1 / 0,
-          w = [],
-          M = null,
-          T = 0;
-        function C(n3) {
-          _(T + n3);
-        }
-        function E(n3) {
-          var t2 = z(T + n3).abs;
-          return D(t2) ? t2 : null;
-        }
-        function z(n3) {
-          var i3 = Math.floor(Math.abs(v(n3 / e2))),
-            r2 = v(((n3 % e2) + e2) % e2);
-          r2 === e2 && (r2 = 0);
-          var a3 = l(n3),
-            o3 = c2.indexOf(
-              t([], c2).reduce(function (n4, t2) {
-                return Math.abs(t2 - r2) < Math.abs(n4 - r2) ? t2 : n4;
-              })
-            ),
-            u3 = o3;
-          return (
-            a3 < 0 && i3++,
-            o3 === s2 && ((u3 = 0), (i3 += a3 > 0 ? 1 : -1)),
-            { abs: u3 + i3 * s2 * a3, origin: o3, rel: u3 }
-          );
-        }
-        function I(n3, t2, i3) {
-          var e3;
-          if (t2 || !S()) return A(n3, i3);
-          if (!D(n3)) return null;
-          var r2 = z(null != i3 ? i3 : T),
-            a3 = r2.abs,
-            o3 = n3 - r2.rel,
-            u3 = a3 + o3;
-          e3 = A(u3);
-          var c3 = A(u3 - s2 * l(o3));
-          return ((null !== c3 && Math.abs(c3) < Math.abs(e3)) || null === e3) && (e3 = c3), v(e3);
-        }
-        function A(n3, t2) {
-          if ((null == t2 && (t2 = v(T)), !D(n3) || null === n3)) return null;
-          n3 = Math.round(n3);
-          var i3 = z(t2),
-            r2 = i3.abs,
-            a3 = i3.rel,
-            o3 = i3.origin,
-            u3 = O(n3),
-            d2 = ((t2 % e2) + e2) % e2,
-            l2 = c2[o3],
-            f3 = Math.floor((n3 - (r2 - a3)) / s2) * e2;
-          return v(l2 - d2 - l2 + c2[u3] + f3 + (o3 === s2 ? e2 : 0));
-        }
-        function D(n3) {
-          return L(n3) === n3;
-        }
-        function L(n3) {
-          return d(n3, h2, m2);
-        }
-        function S() {
-          return o2.loop;
-        }
-        function O(n3) {
-          return ((n3 % s2) + s2) % s2;
-        }
-        function _(t2) {
-          var i3;
-          (i3 = t2 - T),
-            w.push({ distance: i3, timestamp: r() }),
-            w.length > 6 && (w = w.slice(-6)),
-            (T = v(t2));
-          var e3 = H().abs;
-          if (e3 !== M) {
-            var a3 = null !== M;
-            (M = e3), a3 && n2.emit('slideChanged');
-          }
-        }
-        function H(t2) {
-          var r2 = t2
-            ? null
-            : (function () {
-                if (s2) {
-                  var n3 = S(),
-                    t3 = n3 ? ((T % e2) + e2) % e2 : T,
-                    i3 = (n3 ? T % e2 : T) - u2[0][2],
-                    r3 = 0 - (i3 < 0 && n3 ? e2 - Math.abs(i3) : i3),
-                    c3 = 0,
-                    d2 = z(T),
-                    f3 = d2.abs,
-                    p2 = d2.rel,
-                    v2 = u2[p2][2],
-                    y3 = u2.map(function (t4, i4) {
-                      var a3 = r3 + c3;
-                      (a3 < 0 - t4[0] || a3 > 1) &&
-                        (a3 += (Math.abs(a3) > e2 - 1 && n3 ? e2 : 0) * l(-a3));
-                      var u3 = i4 - p2,
-                        d3 = l(u3),
-                        h3 = u3 + f3;
-                      n3 &&
-                        (-1 === d3 && a3 > v2 && (h3 += s2),
-                        1 === d3 && a3 < v2 && (h3 -= s2),
-                        null !== g2 && h3 < g2 && (a3 += e2),
-                        null !== b2 && h3 > b2 && (a3 -= e2));
-                      var m3 = a3 + t4[0] + t4[1],
-                        x3 = Math.max(
-                          a3 >= 0 && m3 <= 1
-                            ? 1
-                            : m3 < 0 || a3 > 1
-                              ? 0
-                              : a3 < 0
-                                ? Math.min(1, (t4[0] + a3) / t4[0])
-                                : (1 - a3) / t4[0],
-                          0
-                        );
-                      return (
-                        (c3 += t4[0] + t4[1]),
-                        {
-                          abs: h3,
-                          distance: o2.rtl ? -1 * a3 + 1 - t4[0] : a3,
-                          portion: x3,
-                          size: t4[0],
-                        }
-                      );
-                    });
-                  return (
-                    (f3 = L(f3)),
-                    (p2 = O(f3)),
-                    {
-                      abs: L(f3),
-                      length: a2,
-                      max: k2,
-                      maxIdx: m2,
-                      min: x2,
-                      minIdx: h2,
-                      position: T,
-                      progress: n3 ? t3 / e2 : T / a2,
-                      rel: p2,
-                      slides: y3,
-                      slidesLength: e2,
-                    }
-                  );
-                }
-              })();
-          return (i2.details = r2), n2.emit('detailsChanged'), r2;
-        }
-        return (i2 = {
-          absToRel: O,
-          add: C,
-          details: null,
-          distToIdx: E,
-          idxToDist: I,
-          init: function (t2) {
-            if (
-              ((function () {
-                if (
-                  ((o2 = n2.options),
-                  (u2 = (o2.trackConfig || []).map(function (n3) {
-                    return [p(n3, 'size', 1), p(n3, 'spacing', 0), p(n3, 'origin', 0)];
-                  })),
-                  (s2 = u2.length))
-                ) {
-                  e2 = v(
-                    u2.reduce(function (n3, t4) {
-                      return n3 + t4[0] + t4[1];
-                    }, 0)
-                  );
-                  var t3,
-                    i4 = s2 - 1;
-                  (a2 = v(e2 + u2[0][2] - u2[i4][0] - u2[i4][2] - u2[i4][1])),
-                    (c2 = u2.reduce(function (n3, i5) {
-                      if (!n3) return [0];
-                      var e3 = u2[n3.length - 1],
-                        r2 = n3[n3.length - 1] + (e3[0] + e3[2]) + e3[1];
-                      return (
-                        (r2 -= i5[2]),
-                        n3[n3.length - 1] > r2 && (r2 = n3[n3.length - 1]),
-                        (r2 = v(r2)),
-                        n3.push(r2),
-                        (!t3 || t3 < r2) && (f2 = n3.length - 1),
-                        (t3 = r2),
-                        n3
-                      );
-                    }, null)),
-                    0 === a2 && (f2 = 0),
-                    c2.push(v(e2));
-                }
-              })(),
-              !s2)
-            )
-              return H(true);
-            var i3;
-            !(function () {
-              var t3 = n2.options.range,
-                i4 = n2.options.loop;
-              (g2 = h2 = i4 ? p(i4, 'min', -1 / 0) : 0), (b2 = m2 = i4 ? p(i4, 'max', y2) : f2);
-              var e3 = p(t3, 'min', null),
-                r2 = p(t3, 'max', null);
-              null !== e3 && (h2 = e3),
-                null !== r2 && (m2 = r2),
-                (x2 = h2 === -1 / 0 ? h2 : n2.track.idxToDist(h2 || 0, true, 0)),
-                (k2 = m2 === y2 ? m2 : I(m2, true, 0)),
-                null === r2 && (b2 = m2),
-                p(t3, 'align', false) &&
-                  m2 !== y2 &&
-                  0 === u2[O(m2)][2] &&
-                  ((k2 -= 1 - u2[O(m2)][0]), (m2 = E(k2 - T))),
-                (x2 = v(x2)),
-                (k2 = v(k2));
-            })(),
-              (i3 = t2),
-              Number(i3) === i3 ? C(A(L(t2))) : H();
-          },
-          to: _,
-          velocity: function () {
-            var n3 = r(),
-              t2 = w.reduce(
-                function (t3, i3) {
-                  var e3 = i3.distance,
-                    r2 = i3.timestamp;
-                  return (
-                    n3 - r2 > 200 ||
-                      (l(e3) !== l(t3.distance) &&
-                        t3.distance &&
-                        (t3 = { distance: 0, lastTimestamp: 0, time: 0 }),
-                      t3.time && (t3.distance += e3),
-                      t3.lastTimestamp && (t3.time += r2 - t3.lastTimestamp),
-                      (t3.lastTimestamp = r2)),
-                    t3
-                  );
-                },
-                { distance: 0, lastTimestamp: 0, time: 0 }
-              );
-            return t2.distance / t2.time || 0;
-          },
-        });
-      }
-      function g(n2) {
-        var t2, i2, e2, r2, a2, o2, u2, s2;
-        function c2(n3) {
-          return 2 * n3;
-        }
-        function f2(n3) {
-          return d(n3, u2, s2);
-        }
-        function p2(n3) {
-          return 1 - Math.pow(1 - n3, 3);
-        }
-        function v2() {
-          return e2 ? n2.track.velocity() : 0;
-        }
-        function h2() {
-          b2();
-          var t3 = 'free-snap' === n2.options.mode,
-            i3 = n2.track,
-            e3 = v2();
-          r2 = l(e3);
-          var u3 = n2.track.details,
-            s3 = [];
-          if (e3 || !t3) {
-            var d2 = m2(e3),
-              h3 = d2.dist,
-              g3 = d2.dur;
-            if (((g3 = c2(g3)), (h3 *= r2), t3)) {
-              var x2 = i3.idxToDist(i3.distToIdx(h3), true);
-              x2 && (h3 = x2);
-            }
-            s3.push({ distance: h3, duration: g3, easing: p2 });
-            var k2 = u3.position,
-              y2 = k2 + h3;
-            if (y2 < a2 || y2 > o2) {
-              var w = y2 < a2 ? a2 - k2 : o2 - k2,
-                M = 0,
-                T = e3;
-              if (l(w) === r2) {
-                var C = Math.min(Math.abs(w) / Math.abs(h3), 1),
-                  E =
-                    (function (n3) {
-                      return 1 - Math.pow(1 - n3, 1 / 3);
-                    })(C) * g3;
-                (s3[0].earlyExit = E), (T = e3 * (1 - C));
-              } else (s3[0].earlyExit = 0), (M += w);
-              var z = m2(T, 100),
-                I = z.dist * r2;
-              n2.options.rubberband &&
-                (s3.push({ distance: I, duration: c2(z.dur), easing: p2 }),
-                s3.push({ distance: -I + M, duration: 500, easing: p2 }));
-            }
-            n2.animator.start(s3);
-          } else
-            n2.moveToIdx(f2(u3.abs), true, {
-              duration: 500,
-              easing: function (n3) {
-                return 1 + --n3 * n3 * n3 * n3 * n3;
-              },
-            });
-        }
-        function m2(n3, t3) {
-          void 0 === t3 && (t3 = 1e3);
-          var i3 = 147e-9 + (n3 = Math.abs(n3)) / t3;
-          return { dist: Math.pow(n3, 2) / i3, dur: n3 / i3 };
-        }
-        function g2() {
-          var t3 = n2.track.details;
-          t3 && ((a2 = t3.min), (o2 = t3.max), (u2 = t3.minIdx), (s2 = t3.maxIdx));
-        }
-        function b2() {
-          n2.animator.stop();
-        }
-        n2.on('updated', g2),
-          n2.on('optionsChanged', g2),
-          n2.on('created', g2),
-          n2.on('dragStarted', function () {
-            (e2 = false), b2(), (t2 = i2 = n2.track.details.abs);
-          }),
-          n2.on('dragChecked', function () {
-            e2 = true;
-          }),
-          n2.on('dragEnded', function () {
-            var e3 = n2.options.mode;
-            'snap' === e3 &&
-              (function () {
-                var e4 = n2.track,
-                  r3 = n2.track.details,
-                  u3 = r3.position,
-                  s3 = l(v2());
-                (u3 > o2 || u3 < a2) && (s3 = 0);
-                var c3 = t2 + s3;
-                0 === r3.slides[e4.absToRel(c3)].portion && (c3 -= s3),
-                  t2 !== i2 && (c3 = i2),
-                  l(e4.idxToDist(c3, true)) !== s3 && (c3 += s3),
-                  (c3 = f2(c3));
-                var d2 = e4.idxToDist(c3, true);
-                n2.animator.start([
-                  {
-                    distance: d2,
-                    duration: 500,
-                    easing: function (n3) {
-                      return 1 + --n3 * n3 * n3 * n3 * n3;
-                    },
-                  },
-                ]);
-              })(),
-              ('free' !== e3 && 'free-snap' !== e3) || h2();
-          }),
-          n2.on('dragged', function () {
-            i2 = n2.track.details.abs;
-          });
-      }
-      function b(n2) {
-        var t2,
-          i2,
-          e2,
-          r2,
-          a2,
-          f2,
-          p2,
-          v2,
-          h2,
-          m2,
-          g2,
-          b2,
-          x2,
-          k2,
-          y2,
-          w,
-          M,
-          T,
-          C = c();
-        function E(t3) {
-          if (f2 && v2 === t3.id) {
-            var o2 = D(t3);
-            if (h2) {
-              if (!A(t3)) return I(t3);
-              (m2 = o2), (h2 = false), n2.emit('dragChecked');
-            }
-            if (w) return (m2 = o2);
-            u(t3);
-            var c2 = (function (t4) {
-              if (M === -1 / 0 && T === 1 / 0) return t4;
-              var e3 = n2.track.details,
-                o3 = e3.length,
-                u2 = e3.position,
-                s2 = d(t4, M - u2, T - u2);
-              if (0 === o3) return 0;
-              if (!n2.options.rubberband) return s2;
-              if (u2 <= T && u2 >= M) return t4;
-              if ((u2 < M && i2 > 0) || (u2 > T && i2 < 0)) return t4;
-              var c3 = (u2 < M ? u2 - M : u2 - T) / o3,
-                l2 = r2 * o3,
-                f3 = Math.abs(c3 * l2),
-                p3 = Math.max(0, 1 - (f3 / a2) * 2);
-              return p3 * p3 * t4;
-            })((p2(m2 - o2) / r2) * e2);
-            i2 = l(c2);
-            var x3 = n2.track.details.position;
-            ((x3 > M && x3 < T) || (x3 === M && i2 > 0) || (x3 === T && i2 < 0)) && s(t3),
-              (g2 += c2),
-              !b2 && Math.abs(g2 * r2) > 5 && (b2 = true),
-              n2.track.add(c2),
-              (m2 = o2),
-              n2.emit('dragged');
-          }
-        }
-        function z(t3) {
-          !f2 &&
-            n2.track.details &&
-            n2.track.details.length &&
-            ((g2 = 0),
-            (f2 = true),
-            (b2 = false),
-            (h2 = true),
-            (v2 = t3.id),
-            A(t3),
-            (m2 = D(t3)),
-            n2.emit('dragStarted'));
-        }
-        function I(t3) {
-          f2 && v2 === t3.idChanged && ((f2 = false), n2.emit('dragEnded'));
-        }
-        function A(n3) {
-          var t3 = L(),
-            i3 = t3 ? n3.y : n3.x,
-            e3 = t3 ? n3.x : n3.y,
-            r3 = void 0 !== x2 && void 0 !== k2 && Math.abs(k2 - e3) <= Math.abs(x2 - i3);
-          return (x2 = i3), (k2 = e3), r3;
-        }
-        function D(n3) {
-          return L() ? n3.y : n3.x;
-        }
-        function L() {
-          return n2.options.vertical;
-        }
-        function S() {
-          (r2 = n2.size), (a2 = L() ? window.innerHeight : window.innerWidth);
-          var t3 = n2.track.details;
-          t3 && ((M = t3.min), (T = t3.max));
-        }
-        function O(n3) {
-          b2 && (s(n3), u(n3));
-        }
-        function _() {
-          if ((C.purge(), n2.options.drag && !n2.options.disabled)) {
-            var i3;
-            (i3 = n2.options.dragSpeed || 1),
-              (p2 =
-                'function' == typeof i3
-                  ? i3
-                  : function (n3) {
-                      return n3 * i3;
-                    }),
-              (e2 = n2.options.rtl ? -1 : 1),
-              S(),
-              (t2 = n2.container),
-              (function () {
-                var n3 = 'data-keen-slider-clickable';
-                o('['.concat(n3, ']:not([').concat(n3, '=false])'), t2).map(function (n4) {
-                  C.add(n4, 'dragstart', s), C.add(n4, 'mousedown', s), C.add(n4, 'touchstart', s);
-                });
-              })(),
-              C.add(t2, 'dragstart', function (n3) {
-                u(n3);
-              }),
-              C.add(t2, 'click', O, { capture: true }),
-              C.input(t2, 'ksDragStart', z),
-              C.input(t2, 'ksDrag', E),
-              C.input(t2, 'ksDragEnd', I),
-              C.input(t2, 'mousedown', z),
-              C.input(t2, 'mousemove', E),
-              C.input(t2, 'mouseleave', I),
-              C.input(t2, 'mouseup', I),
-              C.input(t2, 'touchstart', z, { passive: true }),
-              C.input(t2, 'touchmove', E, { passive: false }),
-              C.input(t2, 'touchend', I),
-              C.input(t2, 'touchcancel', I),
-              C.add(window, 'wheel', function (n3) {
-                f2 && u(n3);
-              });
-            var r3 = 'data-keen-slider-scrollable';
-            o('['.concat(r3, ']:not([').concat(r3, '=false])'), n2.container).map(function (n3) {
-              return (function (n4) {
-                var t3;
-                C.input(
-                  n4,
-                  'touchstart',
-                  function (n5) {
-                    (t3 = D(n5)), (w = true), (y2 = true);
-                  },
-                  { passive: true }
-                ),
-                  C.input(n4, 'touchmove', function (i4) {
-                    var e3 = L(),
-                      r4 = e3 ? n4.scrollHeight - n4.clientHeight : n4.scrollWidth - n4.clientWidth,
-                      a3 = t3 - D(i4),
-                      o2 = e3 ? n4.scrollTop : n4.scrollLeft,
-                      s2 =
-                        (e3 && 'scroll' === n4.style.overflowY) ||
-                        (!e3 && 'scroll' === n4.style.overflowX);
-                    if (((t3 = D(i4)), ((a3 < 0 && o2 > 0) || (a3 > 0 && o2 < r4)) && y2 && s2))
-                      return (w = true);
-                    (y2 = false), u(i4), (w = false);
-                  }),
-                  C.input(n4, 'touchend', function () {
-                    w = false;
-                  });
-              })(n3);
-            });
-          }
-        }
-        n2.on('updated', S),
-          n2.on('optionsChanged', _),
-          n2.on('created', _),
-          n2.on('destroyed', C.purge);
-      }
-      function x(n2) {
-        var t2,
-          i2,
-          e2 = null;
-        function r2(t3, i3, e3) {
-          n2.animator.active
-            ? o2(t3, i3, e3)
-            : requestAnimationFrame(function () {
-                return o2(t3, i3, e3);
-              });
-        }
-        function a2() {
-          r2(false, false, i2);
-        }
-        function o2(i3, r3, a3) {
-          var o3 = 0,
-            u3 = n2.size,
-            d3 = n2.track.details;
-          if (d3 && t2) {
-            var l3 = d3.slides;
-            t2.forEach(function (n3, t3) {
-              if (i3) !e2 && r3 && s2(n3, null, a3), c2(n3, null, a3);
-              else {
-                if (!l3[t3]) return;
-                var d4 = l3[t3].size * u3;
-                !e2 && r3 && s2(n3, d4, a3), c2(n3, l3[t3].distance * u3 - o3, a3), (o3 += d4);
-              }
-            });
-          }
-        }
-        function u2(t3) {
-          return 'performance' === n2.options.renderMode ? Math.round(t3) : t3;
-        }
-        function s2(n3, t3, i3) {
-          var e3 = i3 ? 'height' : 'width';
-          null !== t3 && (t3 = u2(t3) + 'px'),
-            (n3.style['min-' + e3] = t3),
-            (n3.style['max-' + e3] = t3);
-        }
-        function c2(n3, t3, i3) {
-          if (null !== t3) {
-            t3 = u2(t3);
-            var e3 = i3 ? t3 : 0;
-            t3 = 'translate3d('.concat(i3 ? 0 : t3, 'px, ').concat(e3, 'px, 0)');
-          }
-          (n3.style.transform = t3), (n3.style['-webkit-transform'] = t3);
-        }
-        function d2() {
-          t2 && (o2(true, true, i2), (t2 = null)), n2.on('detailsChanged', a2, true);
-        }
-        function l2() {
-          r2(false, true, i2);
-        }
-        function f2() {
-          d2(),
-            (i2 = n2.options.vertical),
-            n2.options.disabled ||
-              'custom' === n2.options.renderMode ||
-              ((e2 = 'auto' === p(n2.options.slides, 'perView', null)),
-              n2.on('detailsChanged', a2),
-              (t2 = n2.slides).length && l2());
-        }
-        n2.on('created', f2),
-          n2.on('optionsChanged', f2),
-          n2.on('beforeOptionsChanged', function () {
-            d2();
-          }),
-          n2.on('updated', l2),
-          n2.on('destroyed', d2);
-      }
-      function k(t2, i2) {
-        return function (e2) {
-          var r2,
-            u2,
-            s2,
-            d2,
-            v2,
-            h2 = c();
-          function m2(n2) {
-            var t3;
-            a(
-              e2.container,
-              'reverse',
-              'rtl' !==
-                ((t3 = e2.container),
-                window.getComputedStyle(t3, null).getPropertyValue('direction')) || n2
-                ? null
-                : ''
-            ),
-              a(e2.container, 'v', e2.options.vertical && !n2 ? '' : null),
-              a(e2.container, 'disabled', e2.options.disabled && !n2 ? '' : null);
-          }
-          function g2() {
-            b2() && M();
-          }
-          function b2() {
-            var t3 = null;
-            if (
-              (d2.forEach(function (n2) {
-                n2.matches && (t3 = n2.__media);
-              }),
-              t3 === r2)
-            )
-              return false;
-            r2 || e2.emit('beforeOptionsChanged'), (r2 = t3);
-            var i3 = t3 ? s2.breakpoints[t3] : s2;
-            return (e2.options = n(n({}, s2), i3)), m2(), I(), A(), C(), true;
-          }
-          function x2(n2) {
-            var t3 = f(n2);
-            return (e2.options.vertical ? t3.height : t3.width) / e2.size || 1;
-          }
-          function k2() {
-            return e2.options.trackConfig.length;
-          }
-          function y2(t3) {
-            for (var a2 in ((r2 = false),
-            (s2 = n(n({}, i2), t3)),
-            h2.purge(),
-            (u2 = e2.size),
-            (d2 = []),
-            s2.breakpoints || [])) {
-              var o2 = window.matchMedia(a2);
-              (o2.__media = a2), d2.push(o2), h2.add(o2, 'change', g2);
-            }
-            h2.add(window, 'orientationchange', z), h2.add(window, 'resize', E), b2();
-          }
-          function w(n2) {
-            e2.animator.stop();
-            var t3 = e2.track.details;
-            e2.track.init(null != n2 ? n2 : t3 ? t3.abs : 0);
-          }
-          function M(n2) {
-            w(n2), e2.emit('optionsChanged');
-          }
-          function T(n2, t3) {
-            if (n2) return y2(n2), void M(t3);
-            I(), A();
-            var i3 = k2();
-            C(), k2() !== i3 ? M(t3) : w(t3), e2.emit('updated');
-          }
-          function C() {
-            var n2 = e2.options.slides;
-            if ('function' == typeof n2) return (e2.options.trackConfig = n2(e2.size, e2.slides));
-            for (
-              var t3 = e2.slides,
-                i3 = t3.length,
-                r3 = 'number' == typeof n2 ? n2 : p(n2, 'number', i3, true),
-                a2 = [],
-                o2 = p(n2, 'perView', 1, true),
-                u3 = p(n2, 'spacing', 0, true) / e2.size || 0,
-                s3 = 'auto' === o2 ? u3 : u3 / o2,
-                c2 = p(n2, 'origin', 'auto'),
-                d3 = 0,
-                l2 = 0;
-              l2 < r3;
-              l2++
-            ) {
-              var f2 = 'auto' === o2 ? x2(t3[l2]) : 1 / o2 - u3 + s3,
-                v3 = 'center' === c2 ? 0.5 - f2 / 2 : 'auto' === c2 ? 0 : c2;
-              a2.push({ origin: v3, size: f2, spacing: u3 }), (d3 += f2);
-            }
-            if (((d3 += u3 * (r3 - 1)), 'auto' === c2 && !e2.options.loop && 1 !== o2)) {
-              var h3 = 0;
-              a2.map(function (n3) {
-                var t4 = d3 - h3;
-                return (
-                  (h3 += n3.size + u3), t4 >= 1 || (n3.origin = 1 - t4 - (d3 > 1 ? 0 : 1 - d3)), n3
-                );
-              });
-            }
-            e2.options.trackConfig = a2;
-          }
-          function E() {
-            I();
-            var n2 = e2.size;
-            e2.options.disabled || n2 === u2 || ((u2 = n2), T());
-          }
-          function z() {
-            E(), setTimeout(E, 500), setTimeout(E, 2e3);
-          }
-          function I() {
-            var n2 = f(e2.container);
-            e2.size = (e2.options.vertical ? n2.height : n2.width) || 1;
-          }
-          function A() {
-            e2.slides = o(e2.options.selector, e2.container);
-          }
-          (e2.container = (v2 = o(t2, document)).length ? v2[0] : null),
-            (e2.destroy = function () {
-              h2.purge(), e2.emit('destroyed'), m2(true);
-            }),
-            (e2.prev = function () {
-              e2.moveToIdx(e2.track.details.abs - 1, true);
-            }),
-            (e2.next = function () {
-              e2.moveToIdx(e2.track.details.abs + 1, true);
-            }),
-            (e2.update = T),
-            y2(e2.options);
-        };
-      }
-      var y = function (n2, i2, e2) {
-        try {
-          return (function (n3, t2) {
-            var i3,
-              e3 = {};
-            return (
-              (i3 = {
-                emit: function (n4) {
-                  e3[n4] &&
-                    e3[n4].forEach(function (n5) {
-                      n5(i3);
-                    });
-                  var t3 = i3.options && i3.options[n4];
-                  t3 && t3(i3);
-                },
-                moveToIdx: function (n4, t3, e4) {
-                  var r2 = i3.track.idxToDist(n4, t3);
-                  if (r2) {
-                    var a2 = i3.options.defaultAnimation;
-                    i3.animator.start([
-                      {
-                        distance: r2,
-                        duration: p(e4 || a2, 'duration', 500),
-                        easing: p(e4 || a2, 'easing', function (n5) {
-                          return 1 + --n5 * n5 * n5 * n5 * n5;
-                        }),
-                      },
-                    ]);
-                  }
-                },
-                on: function (n4, t3, i4) {
-                  void 0 === i4 && (i4 = false), e3[n4] || (e3[n4] = []);
-                  var r2 = e3[n4].indexOf(t3);
-                  r2 > -1 ? i4 && delete e3[n4][r2] : i4 || e3[n4].push(t3);
-                },
-                options: n3,
-              }),
-              (function () {
-                if (((i3.track = m(i3)), (i3.animator = h(i3)), t2))
-                  for (var n4 = 0, e4 = t2; n4 < e4.length; n4++) (0, e4[n4])(i3);
-                i3.track.init(i3.options.initial || 0), i3.emit('created');
-              })(),
-              i3
-            );
-          })(
-            i2,
-            t(
-              [
-                k(n2, {
-                  drag: true,
-                  mode: 'snap',
-                  renderMode: 'precision',
-                  rubberband: true,
-                  selector: '.keen-slider__slide',
-                }),
-                x,
-                b,
-                g,
-              ],
-              e2 || [],
-              true
-            )
-          );
-        } catch (n3) {
-          console.error(n3);
-        }
-      };
       (function () {
-        const tabs = document.querySelectorAll('.tabs button');
-        const desktopContents = document.querySelectorAll('.tab-content.desktop');
-        const mobileContents = document.querySelectorAll('.tab-content.mobile');
-        let keenSliderInstance = null;
-        const hideAllTabs = () => {
-          [...desktopContents, ...mobileContents].forEach(
-            content => (content.style.display = 'none')
-          );
-          tabs.forEach(tab => tab.classList.remove('active'));
-        };
-        const showTab = targetId => {
-          hideAllTabs();
-          const isMobile = window.matchMedia('(max-width: 767px)').matches;
-          const targetContent = isMobile
-            ? document.getElementById(`${targetId}-mobile`)
-            : document.getElementById(`${targetId}-desktop`);
-          if (targetContent) {
-            targetContent.style.display = 'block';
+        class slider {
+          constructor(wrapper) {
+            this.wrapper = wrapper;
+            this.elements = {
+              wrapper: this.wrapper,
+              track: this.wrapper.querySelector(".slider-wrapper"),
+              items: this.wrapper.querySelectorAll(".slider-slide"),
+            };
+            this.buttons = {
+              prev: this.wrapper.querySelector(".slider__prev"),
+              next: this.wrapper.querySelector(".slider__next"),
+            };
+            if (
+              !this.elements.track ||
+              !this.elements.items ||
+              !this.buttons.prev ||
+              !this.buttons.next
+            )
+              return;
+            this.position = 0;
+            this.index = 0;
+            this.width = this.elements.wrapper.clientWidth;
+            this.movePosition = this.width;
+            this.maxPosition = -(
+              this.elements.items.length * this.width -
+              this.width
+            );
+            this.isDragging = false;
+            this.startX = 0;
+            this.currentTranslate = 0;
+            this.prevTranslate = 0;
+            this.dragStartTime = 0;
+            this.hasMovedEnough = false;
+            this.dragDirection = null;
+            this.buttons.prev.addEventListener("click", () => this.prevSlide());
+            this.buttons.next.addEventListener("click", () => this.nextSlide());
+            this.elements.track.addEventListener(
+              "touchstart",
+              (e) => this.startDrag(e),
+              {
+                passive: false,
+              },
+            );
+            this.elements.track.addEventListener(
+              "touchmove",
+              (e) => this.drag(e),
+              { passive: false },
+            );
+            this.elements.track.addEventListener("touchend", () =>
+              this.endDrag(),
+            );
+            this.elements.track.addEventListener("mousedown", (e) =>
+              this.startDrag(e),
+            );
+            document.addEventListener("mousemove", (e) => this.drag(e));
+            document.addEventListener("mouseup", () => this.endDrag());
+            document.addEventListener("mouseleave", () => this.endDrag());
+            this.elements.track.addEventListener("dragstart", (e) =>
+              e.preventDefault(),
+            );
+            this.elements.track.style.transition = "transform 0.3s ease-in-out";
+            this.checkBtns();
           }
-          const activeTab = [...tabs].find(tab => tab.dataset.target === targetId);
-          if (activeTab) {
-            activeTab.classList.add('active');
-            if (isMobile) {
-              activeTab.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center',
-              });
+          nextSlide() {
+            if (this.position <= this.maxPosition) return;
+            this.position -= this.movePosition;
+            this.index++;
+            if (this.position < this.maxPosition) {
+              this.position = this.maxPosition;
+            }
+            this.setPosition();
+            this.checkBtns();
+          }
+          prevSlide() {
+            if (this.position >= 0) return;
+            this.position += this.movePosition;
+            this.index--;
+            if (this.position > 0) {
+              this.position = 0;
+            }
+            this.setPosition();
+            this.checkBtns();
+          }
+          setPosition() {
+            this.elements.track.style.transform = `translateX(${this.position}px)`;
+            this.currentTranslate = this.position;
+            this.prevTranslate = this.position;
+          }
+          checkBtns() {
+            this.buttons.prev.disabled = this.position === 0;
+            this.buttons.next.disabled = this.position <= this.maxPosition;
+          }
+          getPositionX(event) {
+            return event.type.includes("mouse")
+              ? event.pageX
+              : event.touches[0].clientX;
+          }
+          startDrag(e) {
+            this.isDragging = true;
+            this.startX = this.getPositionX(e);
+            this.dragStartTime = Date.now();
+            this.hasMovedEnough = false;
+            this.dragDirection = null;
+            this.elements.track.style.transition = "none";
+            this.elements.track.style.cursor = "grabbing";
+          }
+          drag(e) {
+            if (!this.isDragging) return;
+            e.preventDefault();
+            const currentPosition = this.getPositionX(e);
+            const diff = currentPosition - this.startX;
+            this.dragDirection = diff > 0 ? "right" : "left";
+            if (Math.abs(diff) > 20) {
+              this.hasMovedEnough = true;
+            }
+            const dampingFactor = 0.5;
+            const isFirstSlide = this.position === 0;
+            const isLastSlide = this.position <= this.maxPosition;
+            if ((isFirstSlide && diff > 0) || (isLastSlide && diff < 0)) {
+              this.currentTranslate =
+                this.prevTranslate + diff * dampingFactor * 0.4;
+            } else {
+              this.currentTranslate = this.prevTranslate + diff * dampingFactor;
+            }
+            if (this.currentTranslate > 0) {
+              this.currentTranslate = 0;
+            } else if (this.currentTranslate < this.maxPosition) {
+              this.currentTranslate = this.maxPosition;
+            }
+            this.elements.track.style.transform = `translateX(${this.currentTranslate}px)`;
+          }
+          endDrag() {
+            if (!this.isDragging) return;
+            const dragEndTime = Date.now();
+            const dragDuration = dragEndTime - this.dragStartTime;
+            this.isDragging = false;
+            this.elements.track.style.transition = "transform 0.3s ease-in-out";
+            this.elements.track.style.cursor = "grab";
+            const timeThreshold = 400;
+            const canSlideLeft = this.position > this.maxPosition;
+            const canSlideRight = this.position < 0;
+            if (this.hasMovedEnough && dragDuration < timeThreshold) {
+              if (this.dragDirection === "left" && canSlideLeft) {
+                this.nextSlide();
+              } else if (this.dragDirection === "right" && canSlideRight) {
+                this.prevSlide();
+              } else {
+                this.setPosition();
+              }
+            } else {
+              this.setPosition();
             }
           }
-          initKeenSlider(targetContent);
-        };
-        const initKeenSlider = targetContent => {
-          if (keenSliderInstance) {
-            keenSliderInstance.destroy();
-          }
-          const keenSliderElement = targetContent.querySelector('.keen-slider');
-          if (keenSliderElement) {
-            keenSliderInstance = new y(keenSliderElement, {
-              loop: false,
-              slidesPerView: 1,
-              spacing: 0,
-            });
-          }
-        };
-        if (tabs.length > 0) {
-          const firstTabId = tabs[0].dataset.target;
-          showTab(firstTabId);
         }
-        tabs.forEach(tab => {
-          tab.addEventListener('click', () => showTab(tab.dataset.target));
-        });
-        window.addEventListener('resize', () => {
-          const activeTab = document.querySelector('.tabs button.active');
-          if (activeTab) {
-            showTab(activeTab.dataset.target);
-          }
-        });
+        new slider(document.querySelector(".slider"));
       })();
     </script>
   </body>
